@@ -1,0 +1,48 @@
+.square {
+  border-radius: 0px;
+}
+
+.jumbotron {
+  background-image: linear-gradient(to right, #007bff, #000);
+  color: #fff;
+}
+
+.logo {
+  display: inline !important;
+  width: 75%;
+}
+ 
+.TopNav{
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.btnGrad{
+  background: linear-gradient(95.14deg, #262A69 -38.67%, #0F75BC 96.61%);
+  color: #fff;
+  padding: .7rem 0;
+} 
+
+.singleForm{
+  height: 90vh;
+}
+.ant-tabs, .ant-tabs-nav::before {
+  border: none !important;
+}
+.ant-tabs-tab{
+  border: 0px solid #0F75BC !important;
+  background-color: #c0e0ff75 !important;
+  color: #0F75BC !important;
+  opacity: 50% !important;
+  padding: .7rem 1.7rem !important;
+  border-radius: 5px !important;
+  margin: 0 .5rem !important;
+}
+
+.ant-tabs-tab-active{
+  opacity: 100% !important;
+  background-color: #0F75BC !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: #ffffff !important;
+}

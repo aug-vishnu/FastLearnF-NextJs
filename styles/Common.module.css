@@ -1,0 +1,61 @@
+.ListCard {
+  background-color: #f5faff;
+  border-radius: 5px;
+  padding: 1.5rem 2rem !important;
+  margin: 1rem;
+  color: #0f75bc;
+  max-width: 285px;
+  box-shadow: 4px 4px 13px -0px #00000027;
+}
+
+.btnNext {
+  background-color: #ddeeffc2;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+.ListCard h1 {
+  margin: 0;
+  font-size: 1.7rem !important;
+  color: #0f75bc;
+}
+
+.ListCard p {
+  width: 70%;
+  opacity: 50%;
+}
+
+.ListCard .pointer {
+  cursor: pointer;
+}
+
+.CourseCard {
+  background-color: #f5faff;
+  border-radius: 5px;
+  padding: 1.5rem 2rem !important;
+  margin-bottom: 1rem;
+  color: #0f75bc;
+  width: 100%;
+  height: 12vh;
+  box-shadow: 4px 4px 13px -0px #00000027;
+}
+@media only screen and (max-width: 800px) {
+  .CourseCard {
+    height: 25vh !important;
+  }
+}
+.CourseCard h5 {
+  /* margin: 0; */
+  font-size: 1.7rem !important;
+  color: #0f75bc;
+  width: 200px;
+}
+
+.CourseCard p {
+  width: 70%;
+  opacity: 50%;
+}
+
+.CourseCard .pointer {
+  cursor: pointer;
+}

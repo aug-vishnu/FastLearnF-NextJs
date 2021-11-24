@@ -1,0 +1,18 @@
+.CourseDetailAtnBtn {
+  background-color: #f5faff;
+  border-radius: 5px;
+  margin: 1rem 0;
+  padding: 1.5rem 2rem;
+  color: #0f75bc;
+  box-shadow: 4px 4px 13px -0px #00000010;
+}
+
+.CourseDetailAtnBtn h1 {
+  margin: 0;
+  font-size: 2rem !important;
+  color: #0f75bc;
+}
+
+.CourseDetailAtnBtn p {
+  opacity: 50%;
+}

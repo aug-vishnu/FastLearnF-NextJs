@@ -1,0 +1,79 @@
+.ant-menu {
+  border-bottom: none !important;
+  margin-bottom: -0.3rem !important;
+}
+
+.ant-menu-item {
+  /* height: 3.5rem !important; */
+}
+
+.ant-menu-item-selected,
+.ant-menu-item-active {
+  /* border-bottom: 3px solid #1890ff !important;
+  height: 3.5rem !important; */
+}
+.ant-menu-item::after {
+  /* border-right: 0px !important; */
+}
+
+.ant-tabs,
+.ant-tabs-nav::before {
+  border: none !important;
+}
+
+.ant-btn {
+  border-radius: 5px;
+}
+.contentArea {
+  margin: 1rem 3rem;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.w60 {
+  width: 60% !important;
+}
+
+.text-small {
+  font-size: 12px;
+}
+.ant-tabs-tab {
+  border: 0px solid #0f75bc !important;
+  background-color: #c0e0ff75 !important;
+  color: #0f75bc !important;
+  opacity: 50% !important;
+  padding: 0.7rem 1.7rem !important;
+  border-radius: 5px !important;
+  margin: 0 0.5rem !important;
+}
+
+.ant-tabs-tab-active {
+  opacity: 100% !important;
+  background-color: #0f75bc !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #ffffff !important;
+}
+
+.ant-radio-group {
+  width: 100% !important;
+}
+
+.ant-radio-wrapper {
+  background-color: #ddeeff;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 6px;
+}
+
+.ant-avatar {
+  width: 100% !important;
+  min-height: 120px !important;
+}
+
+.courseName {
+  min-width: 10vw;
+  height: 4vh;
+}

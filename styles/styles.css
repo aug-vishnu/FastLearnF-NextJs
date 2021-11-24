@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins" !important;
+  font-size: 14px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #0f75bc !important;
+}
+.square {
+  border-radius: 0px;
+}
+
+.container {
+  max-width: 1450px !important;
+  margin-top: 2rem;
+  padding: 0 3rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* .jumbotron {
+  background-image: linear-gradient(to right, #007bff, #000);
+  color: #fff;
+} */
+
+.logo {
+  display: inline !important;
+  width: 85%;
+}
+
+.TopNav {
+  box-shadow: 0px -10px 36px rgba(0, 0, 0, 0.25);
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.btnGrad {
+  background: linear-gradient(95.14deg, #262a69 -38.67%, #0f75bc 96.61%);
+  color: #fff;
+  padding: 0rem 2rem;
+  transition: 2s;
+  height: 4rem !important;
+}
+
+.btnGrad:hover {
+  background: linear-gradient(95.14deg, #0f75bc -38.67%, #262a69 96.61%);
+}
+
+.singleForm {
+  height: 80vh;
+  margin: 0 1rem;
+}
+
+select,
+input[type="file"] {
+  height: 4rem !important;
+}
+
+input[type="text"] {
+  margin-bottom: 1.5rem !important;
+  padding: 1.5rem !important;
+}
+
+.singleForm h1 {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+  color: #007bff;
+}
+
+.wrapper {
+  background-color: #f5faff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.shadow {
+  box-shadow: 4px 4px 13px -0px #00000027;
+}
+
+.studentCta {
+  box-shadow: 4px 4px 13px -0px #00000027;
+  height: 15vh;
+}
+.studentsLogo {
+  margin-top: -7.5vh;
+  height: 22vh;
+  width: 25vw;
+}
+svg {
+  margin-top: -6px;
+}
+
+.correct {
+  background-color: #c0ffb6 !important;
+}
+
+.notviewed {
+  background-color: #ddeeff !important;
+}
+
+.incorrect {
+  background-color: #ffb8b8 !important;
+}
+
+.markedlater {
+  background-color: #faffc6 !important;
+}
+
+.correct:hover {
+  background-color: #a9fd9b !important;
+}
+
+.notviewed:hover {
+  background-color: #bfdcfa !important;
+}
+
+.incorrect:hover {
+  background-color: #f79a9a !important;
+}
+
+.markedlater:hover {
+  background-color: #f5ff9e !important;
+}
+
+section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.lessons {
+  cursor: grab !important;
+  text-decoration: underline;
+}
+.heroSection {
+  /* padding-bottom: 60vh; */
+}
+.heroSection h1 {
+  font-size: 5rem !important;
+  font-weight: bold !important  ;
+  margin-bottom: 2rem !important;
+}
+
+.heroSection h2 {
+  font-size: 3rem !important;
+  font-weight: bold !important  ;
+}
+
+.heroSection h3 {
+  width: 60%;
+}
+
+.footer {
+  margin-top: 20vh !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .heroSection {
+    margin-top: 10vh;
+    margin-bottom: 10vh !important;
+  }
+  .heroSection h1 {
+    font-size: 3rem !important;
+  }
+
+  .heroSection h2 {
+    font-size: 2rem !important;
+  }
+
+  .heroSection h3 {
+    width: 100%;
+  }
+}

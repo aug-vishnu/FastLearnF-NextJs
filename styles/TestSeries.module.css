@@ -1,0 +1,15 @@
+.QuestionState {
+  height: 50px;
+  cursor: pointer;
+  /* width: 5vw; */
+  /* background-color: #c7e2fd; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+/* .QuestionState:hover {
+  background-color: #ddeeff;
+} */

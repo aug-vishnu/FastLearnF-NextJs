@@ -1,7 +1,7 @@
 
 #
 
-![FastLearn Logo](./assets/banner.png)
+![FastLearn Logo](https://raw.githubusercontent.com/aug-vishnu/FastLearnF-NextJs/main/assets/banner.png)
 
 
 FastLearn is an online platform where course creators can create their courses and publish them online. It covers a wide range of audiences by allowing students around the world to enroll themselves in courses and start learning those courses online. This platform also enables the students to get learning resources for competitive exams handy.

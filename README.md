@@ -1,7 +1,8 @@
 
 #
 
-![RemoteUp Logo](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa6282fef-9f25-41da-8376-e05b0ccd4bc3%2FNew_Project.png?table=block&id=626c8d4d-c7d9-4b82-9d1d-344eca6bd687&spaceId=a97cb058-ce8f-43f7-9e9b-80587176a4d3&width=2000&userId=5f62615f-ea82-446a-af4e-1041b981b02d&cache=v2)
+![RemoteUp Logo](./src/assets/logo.png)
+
 
 RemoteUp is a remote jobs board portal where jobseekers can save jobs & apply for jobs and recruiters can post jobs. It helps recruiters with an inbuilt ATS(Applicants Tracking System) at no extra cost.
 

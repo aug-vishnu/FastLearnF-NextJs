@@ -1,7 +1,7 @@
 
 #
 
-![RemoteUp Logo](./src/assets/logo.png)
+![FastLearn Logo](./assets/logo.png)
 
 
 RemoteUp is a remote jobs board portal where jobseekers can save jobs & apply for jobs and recruiters can post jobs. It helps recruiters with an inbuilt ATS(Applicants Tracking System) at no extra cost.

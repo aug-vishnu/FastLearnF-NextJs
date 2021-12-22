@@ -4,7 +4,7 @@
 ![FastLearn Logo](./assets/logo.png)
 
 
-RemoteUp is a remote jobs board portal where jobseekers can save jobs & apply for jobs and recruiters can post jobs. It helps recruiters with an inbuilt ATS(Applicants Tracking System) at no extra cost.
+FastLearn is an online platform where course creators can create their courses and publish them online. It covers a wide range of audiences by allowing students around the world to enroll themselves in courses and start learning those courses online. This platform also enables the students to get learning resources for competitive exams handy.
 
 Making this site gave us the opportunity to really stretch out and craft a site with great UX.
 
@@ -24,7 +24,7 @@ Welcome! we hope you enjoy the site as much as we enjoyed making it.
 
 # Demo
 
-[Live Demo](https://remote-up.netlify.app)
+[Live Demo](http://ec2-65-0-125-246.ap-south-1.compute.amazonaws.com/)
 
 <br/>
 
@@ -46,16 +46,6 @@ Test Credentials:
 
 <br/>
 
-Test card details:
-
-We have integrated Stripe checkout. To post a job, you'll need to make a dummy payment on Stripe checkout. Use the following details:
-
-- Card Number: 4242 4242 4242 4242
-- Expiry: Any future date
-- CVC: Any random 3 digit number
-
-<br/>
-
 # Installation
 
 - Fork or directly clone this repository to your local machine
@@ -68,18 +58,14 @@ We have integrated Stripe checkout. To post a job, you'll need to make a dummy p
 
 We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
 
-- [Material UI](https://mui.com)
-- [Formik](https://formik.org/)
-- [Yup](https://github.com/jquense/yup)
+- [Ant design](https://ant.design/)
 - [Axios](https://axios-http.com/docs/intro)
-- [React Query](https://react-query.tanstack.com/)
-- [Auth0-lock](https://github.com/auth0/lock)
 
 <br/>
 
 # Authors
 
-- [Minith Jain](https://www.github.com/minithb)
-- [Bhupendra Mukkirla](https://github.com/bhupen13au)
+- [Vishnu K](https://github.com/aug-vishnu)
+- [Alok Kumar](https://github.com/alokscra26032011Zk/)
 
 <br/>

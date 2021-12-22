@@ -1,7 +1,7 @@
 
 #
 
-![FastLearn Logo](./assets/logo.png)
+![FastLearn Logo](./assets/banner.png)
 
 
 FastLearn is an online platform where course creators can create their courses and publish them online. It covers a wide range of audiences by allowing students around the world to enroll themselves in courses and start learning those courses online. This platform also enables the students to get learning resources for competitive exams handy.
@@ -37,12 +37,12 @@ Please Note:
 <br/>
 Test Credentials:
 
-- For Recruiter
-  - Email: remoteup.recruiter@gmail.com
-  - Password: recruiter@1234
-- For Jobseeker (use Google)
-  - Email: remoteup.jobseeker@gmail.com
-  - Password: jobseeker@1234
+- For Tutor
+  - Email: testinstructor@gmail.com
+  - Password: testinstructor
+- For Student
+  - Email: teststudent@gmail.com
+  - Password: teststudent
 
 <br/>
 

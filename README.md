@@ -12,7 +12,7 @@ Welcome! we hope you enjoy the site as much as we enjoyed making it.
 
 <br/>
 
-# Table of Content
+# Table of Contents
 
 1. [Demo](#demo)
 2. [Installation](#installation)
@@ -69,3 +69,8 @@ We tried to use a completely modern tech stack while testing out some new techno
 - [Alok Kumar](https://github.com/alokscra26032011Zk/)
 
 <br/>
+
+# License
+
+[MIT](https://opensource.org/licenses/MIT)
+

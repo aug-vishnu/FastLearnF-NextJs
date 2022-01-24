@@ -14,7 +14,7 @@ import {
   CheckCircleFilled,
   CloseCircleFilled,
 } from "@ant-design/icons";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown/react-markdown.min";
 import { Context } from "../../context";
 import CodeBlock from "../marked/CodeBlock";
 import MarkdownCheetsheet from "../modal/MarkdownCheatsheet";

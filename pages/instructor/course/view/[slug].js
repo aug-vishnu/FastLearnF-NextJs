@@ -8,7 +8,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import InstructorRoute from "../../../../components/routes/InstructorRoute";
-// import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from 'react-markdown/react-markdown.min';
 import CourseDetailAtnBtn from "../../../../components/Course/CourseDetailAtnBtn";
 import ConceptAddBtn from "../../../../components/Course/ConceptAddBtn";
 const { SubMenu } = Menu;

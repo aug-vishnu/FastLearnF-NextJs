@@ -7,7 +7,7 @@ import {
   DeleteOutlined,
   QuestionCircleOutlined,
 } from "@ant-design/icons";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown/react-markdown.min";
 import { Context } from "../../context";
 import MarkdownCheetsheet from "../../components/modal/MarkdownCheatsheet";
 

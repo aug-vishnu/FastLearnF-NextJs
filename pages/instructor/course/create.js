@@ -5,7 +5,6 @@ import CourseCreateForm from "../../../components/forms/CourseCreateForm";
 import Resizer from "react-image-file-resizer";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import user from "../../../../server/models/user";
 import { Col, Row } from "antd";
 
 const CourseCreate = () => {

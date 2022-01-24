@@ -32,10 +32,13 @@ const Login = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_API}/login`,
+        {
+          email,
+          password,
+        }
+      );
       console.log("LOGIN RESPONSE", data);
       // setLoading(false);
       dispatch({

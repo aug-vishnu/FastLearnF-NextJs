@@ -33,11 +33,14 @@ const Register = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/register-instructor`, {
-        name,
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_API}/register-instructor`,
+        {
+          name,
+          email,
+          password,
+        }
+      );
       // console.log("REGISTER RESPONSE", data);
       loginUser();
       toast("Registration successful. Please login.");
@@ -55,13 +58,16 @@ const Register = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/register-student`, {
-        name,
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_API}/register-student`,
+        {
+          name,
+          email,
+          password,
+        }
+      );
       loginUser();
-      // console.log("REGISTER RESPONSE", data);
+      console.log("REGISTER RESPONSE", data);
       toast("Registration successful. Please login.");
       setName("");
       setEmail("");

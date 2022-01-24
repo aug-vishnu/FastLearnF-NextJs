@@ -29,7 +29,7 @@ const StudentIndex = ({ courses, router }) => {
 };
 
 export async function getServerSideProps() {
-  const { data } = await axios.get(`${process.env.API}/courses`);
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/courses`);
   // console.log("DATA LENGTH =====> ", data.length);
   return {
     props: {

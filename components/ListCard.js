@@ -20,7 +20,7 @@ function ListCard({ course, withImage, slug, isPublic }) {
             }
           />
           <div className="media-body pl-2">
-            <div className="row">
+            <div className="row" style={{ marginBottom: "35px" }}>
               <div className="col-8">
                 <Badge count={course.paid ? course.price : "Free"}>
                   <Link href={slug} className="pointer">
@@ -31,7 +31,7 @@ function ListCard({ course, withImage, slug, isPublic }) {
                     </a>
                   </Link>
                 </Badge>
-                <p style={{ marginTop: "-10px" }}>
+                <p style={{ marginTop: "-15px" }}>
                   {course.lessons.length} Lessons
                 </p>
                 {isPublic !== "true" && course.lessons.length < 5 ? (

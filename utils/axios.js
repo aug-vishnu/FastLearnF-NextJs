@@ -5,7 +5,7 @@ export const axiosPublic = axios.create({
 });
 
 export const axiosAuth = axios.create({
-  baseURL: process.env.API,
+  baseURL: process.env.NEXT_PUBLIC_API,
 });
 
 // axiosAuth.interceptors.request.use(

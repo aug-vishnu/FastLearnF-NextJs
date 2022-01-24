@@ -25,10 +25,9 @@ function StudentCta() {
         </Col>
         <Col span={14}>
           {" "}
-          <h2 className="my-2 mt-4">Welcome Alok !</h2>
+          <h2 className="my-2 mt-4">Welcome to India’s best courses </h2>
           <p className="my-2 text-primary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod
+            On-demand Courses built for you by your favorite Tutors{" "}
           </p>
         </Col>
       </Row>

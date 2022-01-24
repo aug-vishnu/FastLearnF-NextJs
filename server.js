@@ -11,15 +11,14 @@ app
   .then(() => {
     const server = express();
     // apply proxy in dev mode
-    if (dev) {
-      server.use(
-        "/api",
-        createProxyMiddleware({
-          target: "http://localhost:8000",
-          changeOrigin: true,
-        })
-      );
-    }
+
+    server.use(
+      "/api",
+      createProxyMiddleware({
+        target: "https://fastlearn-api.herokuapp.com",
+        changeOrigin: true,
+      })
+    );
 
     server.all("*", (req, res) => {
       return handle(req, res);

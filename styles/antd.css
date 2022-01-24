@@ -75,5 +75,8 @@
 
 .courseName {
   min-width: 10vw;
-  height: 4vh;
+  height: 5vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -14,7 +14,7 @@ import {
   CheckCircleFilled,
   CloseCircleFilled,
 } from "@ant-design/icons";
-import ReactMarkdown from "react-markdown/react-markdown.min";
+// import ReactMarkdown from 'react-markdown/react-markdown.min';
 import { Context } from "../../context";
 import CodeBlock from "../marked/CodeBlock";
 import MarkdownCheetsheet from "../modal/MarkdownCheatsheet";
@@ -99,11 +99,11 @@ const UserQaReadRemove = ({
 
               <h5>{q.title}</h5>
 
-              <ReactMarkdown
+              {/* <ReactMarkdown
                 source={q.description}
                 renderers={{ code: CodeBlock }}
                 className="single-post"
-              />
+              /> */}
 
               {q.postedBy && user && user._id === q.postedBy ? (
                 <div
@@ -205,11 +205,11 @@ const UserQaReadRemove = ({
                       q.createdAt
                     ).toLocaleDateString()}`}
                     description={
-                      <ReactMarkdown
-                        source={a.content}
-                        renderers={{ code: CodeBlock }}
-                        className="single-post"
-                      />
+                      // <ReactMarkdown
+                      //   source={a.content}
+                      //   renderers={{ code: CodeBlock }}
+                      //   className="single-post"
+                      // />
                     }
                   />
                 </Card>

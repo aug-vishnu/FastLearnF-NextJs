@@ -12,7 +12,6 @@ import {
 } from "@ant-design/icons";
 import StudentRoute from "../../../components/routes/StudentRoute";
 import ReactPlayer from "react-player";
-// import ReactMarkdown from 'react-markdown/react-markdown.min';
 import QaCreateRead from "../../../components/qa/QaCreateRead";
 import AddAnswer from "../../../components/qa/AddAnswer";
 import EditAnswer from "../../../components/qa/EditAnswer";
@@ -21,7 +20,7 @@ import { toast } from "react-toastify";
 import { Context } from "../../../context";
 import { useWindowWidth } from "@react-hook/window-size";
 import CodeBlock from "../../../components/marked/CodeBlock";
-import ReactMarkdown from "react-markdown/react-markdown.min";
+// import ReactMarkdown from 'react-markdown/react-markdown.min';
 
 const { Item } = Menu;
 

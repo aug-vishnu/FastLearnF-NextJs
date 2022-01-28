@@ -8,8 +8,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "../context";
 
-axios.defaults.baseURL = "https://fastlearn-api.herokuapp.com/";
-// axios.defaults.baseURL = "http://localhost:8000/";
+// axios.defaults.baseURL = "https://fastlearn-api.herokuapp.com/";
+axios.defaults.baseURL = "http://localhost:8000/";
 
 function MyApp({ Component, pageProps }) {
   return (

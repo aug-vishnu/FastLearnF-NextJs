@@ -61,9 +61,7 @@ const Index = ({ courses, router }) => {
 };
 
 export async function getServerSideProps() {
-  const { data } = await axios.get(
-    `https://fastlearn-api.herokuapp.com/api/courses`
-  );
+  const { data } = await axios.get(`/api/courses`);
   // console.log("DATA LENGTH =====> ", data.length);
   return {
     props: {

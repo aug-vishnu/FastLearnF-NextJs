@@ -8,9 +8,9 @@ import { useRouter } from "next/router";
 import { Col, Row, Tabs } from "antd";
 
 const Register = () => {
-  const [name, setName] = useState("Alok");
-  const [email, setEmail] = useState("alok.node@gmail.com");
-  const [password, setPassword] = useState("rrrrrr");
+  const [name, setName] = useState("Pesto Student");
+  const [email, setEmail] = useState("pestostudent@gmail.com");
+  const [password, setPassword] = useState("pestostudent");
   const [loading, setLoading] = useState(false);
 
   const {
@@ -33,14 +33,11 @@ const Register = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(
-        `https://fastlearn-api.herokuapp.com/api/register-instructor`,
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const { data } = await axios.post(`/api/register-instructor`, {
+        name,
+        email,
+        password,
+      });
       // console.log("REGISTER RESPONSE", data);
       loginUser();
       toast("Registration successful. Please login.");
@@ -58,14 +55,11 @@ const Register = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(
-        `https://fastlearn-api.herokuapp.com/api/register-student`,
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const { data } = await axios.post(`/api/register-student`, {
+        name,
+        email,
+        password,
+      });
       loginUser();
       console.log("REGISTER RESPONSE", data);
       toast("Registration successful. Please login.");

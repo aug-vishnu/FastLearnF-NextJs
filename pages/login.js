@@ -8,8 +8,8 @@ import { Context } from "../context";
 import { Col, Row, Tabs } from "antd";
 
 const Login = () => {
-  const [email, setEmail] = useState("teststudent@gmail.com");
-  const [password, setPassword] = useState("teststudent");
+  const [email, setEmail] = useState("pestostudent@gmail.com");
+  const [password, setPassword] = useState("pestostudent");
   const [loading, setLoading] = useState(false);
 
   // state
@@ -32,13 +32,10 @@ const Login = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(
-        `https://fastlearn-api.herokuapp.com/api/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const { data } = await axios.post(`/api/login`, {
+        email,
+        password,
+      });
       console.log("LOGIN RESPONSE", data);
       // setLoading(false);
       dispatch({
@@ -66,7 +63,7 @@ const Login = () => {
         </Tabs> */}
           <h1 className="text-center mb-2 font-weight-bold">Login Here !</h1>
           <p className="text-center mb-5">
-            Instructor login - testinstructor@gmail.com : testinstructor
+            Instructor login - pestotutor@gmail.com : pestotutor
           </p>
           <form onSubmit={handleSubmit}>
             <label htmlFor="">Email</label>

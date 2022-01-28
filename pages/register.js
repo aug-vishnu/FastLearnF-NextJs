@@ -34,7 +34,7 @@ const Register = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/register-instructor`,
+        `https://fastlearn-api.herokuapp.com/api/register-instructor`,
         {
           name,
           email,
@@ -59,7 +59,7 @@ const Register = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API}/register-student`,
+        `https://fastlearn-api.herokuapp.com/api/register-student`,
         {
           name,
           email,

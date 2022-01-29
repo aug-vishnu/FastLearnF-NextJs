@@ -88,8 +88,8 @@ const CourseEdit = () => {
         categories: selectedCategories,
       });
       // console.log(data);
-      toast("Updated!");
-      // router.push("/instructor");
+      toast("Course Updated!");
+      router.push(`/instructor/course/view/${slug}`);
     } catch (err) {
       console.log(err);
       toast(err.response.data);

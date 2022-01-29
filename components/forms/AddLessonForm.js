@@ -14,18 +14,18 @@ const AddLessonForm = ({
   return (
     <div className="">
       <form onSubmit={handleAddLesson}>
-        <label htmlFor="">Chapter Name</label>
+        <label htmlFor="">Lesson Name</label>
 
         <input
           type="text"
           className="form-control square"
           onChange={(e) => setValues({ ...values, title: e.target.value })}
           values={values.title}
-          placeholder="Chapter Name"
+          placeholder="Lesson Name"
           autoFocus
           required
         />
-        <label htmlFor="">Chapter Description</label>
+        <label htmlFor="">Lesson Description</label>
 
         <textarea
           className="form-control mt-3"
@@ -33,10 +33,10 @@ const AddLessonForm = ({
           rows="7"
           onChange={(e) => setValues({ ...values, content: e.target.value })}
           values={values.content}
-          placeholder="Chapter Description"
+          placeholder="Lesson Description"
         ></textarea>
-        <label htmlFor="" className="mt-3">
-          Chapter Cover
+        {/* <label htmlFor="" className="mt-3">
+          Lesson Cover
         </label>
         <div className="d-flex justify-content-center">
           <label className="btn btn-dark btn-block text-left mt-1">
@@ -59,7 +59,7 @@ const AddLessonForm = ({
             percent={progress}
             steps={10}
           />
-        )}
+        )} */}
 
         <Button
           onClick={handleAddLesson}
@@ -69,7 +69,7 @@ const AddLessonForm = ({
           loading={uploading}
           block
         >
-          Create Chapter
+          Add Lesson
         </Button>
       </form>
     </div>

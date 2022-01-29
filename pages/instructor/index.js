@@ -4,7 +4,7 @@ import InstructorRoute from "../../components/routes/InstructorRoute";
 import Link from "next/link";
 
 import ListCard from "../../components/ListCard";
-import { Row } from "antd";
+import { Button, Empty, Row } from "antd";
 
 const InstructorIndex = () => {
   const [courses, setCourses] = useState([]);
@@ -21,14 +21,17 @@ const InstructorIndex = () => {
 
   return (
     <InstructorRoute>
-      <h1 className="text-center square p-3 mt-2 left-bottom-radius">
-        List of courses
-      </h1>
+      <Row justify="space-between" align="middle" className="mb-5">
+        <h2 className="text-center mt-3 ml-2 left-bottom-radius">
+          List of your courses ( {courses.length} )
+        </h2>
 
-      {!courses.length && (
         <Link href="/instructor/course/create">
           <a className="btn btn-primary float-right mt-2">Create course</a>
         </Link>
+      </Row>
+      {!courses.length && (
+        <Empty className="pt-5" description="Upload your first course" />
       )}
       <Row justify="start">
         {courses &&

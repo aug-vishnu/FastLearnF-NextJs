@@ -5,12 +5,12 @@ import CourseCard from "../../components/cards/CourseCard";
 import TutorAtnBtn from "./TutorAtnBtn";
 import TutorCta from "./TutorCta";
 import Footer from "../Footer";
+import { Empty } from "antd";
 
 function TutorDashboard({ courses }) {
   return (
     <div>
-      <TutorAtnBtn></TutorAtnBtn>
-      <TutorCta></TutorCta>
+      {/* <TutorCta></TutorCta> */}
       <Row gutter={24} className="mt-4">
         {/* <Col span={8}>
           {" "}
@@ -19,7 +19,15 @@ function TutorDashboard({ courses }) {
         </Col> */}
         <Col span={24}>
           {" "}
-          <h3 className="mb-4">My Courses</h3>
+          <Row justify="space-between" className="py-4">
+            {courses.length != 0 && (
+              <h3 className="mb-4">Courses ( {courses.length} )</h3>
+            )}
+            <TutorAtnBtn></TutorAtnBtn>
+          </Row>
+          {!courses.length && (
+            <Empty className="pt-5" description="Upload your first course" />
+          )}
           <div className="row pt-2">
             {courses.map((course) => (
               <div key={course._id} className="col-md-12">

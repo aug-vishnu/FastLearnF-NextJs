@@ -5,23 +5,22 @@ import styles from "../styles/Overview.module.css";
 import TutorDashboard from "../components/Tutor/TutorDashboard";
 import StudentDashboard from "../components/Student/StudentDashboard";
 import CommonDashboard from "../components/CommonDashboard";
-import Footer from "../components/Footer";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../context";
 
 const Index = ({ courses, router }) => {
   const head = () => (
     <Head>
-      <title>Fastlearn | {process.env.APP_NAME}</title>
-      <meta name="description" content="Fastlearn" />
+      <title>FastLearn </title>
+      <meta name="description" content="FastLearn" />
       <link rel="canonical" href={`${process.env.DOMAIN}${router.pathname}`} />
       <meta
         property="og:title"
-        content={`Fastlearn | ${process.env.APP_NAME}`}
+        content={`FastLearn | ${process.env.APP_NAME}`}
       />
       <meta
         property="og:description"
-        content={`Fastlearn ${process.env.APP_NAME}`}
+        content={`FastLearn ${process.env.APP_NAME}`}
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${process.env.DOMAIN}/default.jpg`} />

@@ -17,7 +17,7 @@ function StudentDashboard({ courses }) {
         </Col> */}
         <Col span={24}>
           {" "}
-          <h3 className="mb-4">In progress Courses ({courses.length}) </h3>
+          <h3 className="mb-4">Trending Courses ({courses.length}) </h3>
           {!courses.length && (
             <Empty
               className="pt-5"

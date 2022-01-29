@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { Avatar, Col, Menu, Row, List } from "antd";
+import { Avatar, Col, Menu, Row, List, Empty, Tooltip } from "antd";
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -75,12 +75,24 @@ const CourseView = () => {
               <ReactMarkdown source={course.description} />
             </div>
           </div> */}
-
           <div className="row pb-5">
             <div className="col lesson-list">
-              <h4>
-                {course && course.lessons && course.lessons.length} Lessons
-              </h4>
+              <Row justify="space-between" align="middle" className="mb-5">
+                <h4>
+                  {course && course.lessons && course.lessons.length} Lessons
+                </h4>
+                <Tooltip title="Edit this lesson">
+                  <a
+                    className="btn btn-dark"
+                    onClick={() =>
+                      router.push(`/instructor/course/edit/${course.slug}`)
+                    }
+                  >
+                    Edit Lessons
+                  </a>
+                </Tooltip>
+              </Row>
+
               {/* <List
                 itemLayout="horizontal"
                 dataSource={course && course.lessons}
@@ -93,7 +105,34 @@ const CourseView = () => {
                   </Item>
                 )}
               /> */}
-              {course.lessons.map((lesson) => (
+              {!course.lessons.length && (
+                <Empty className="pt-5" description="Upload your lessons" />
+              )}
+              <List
+                itemLayout="horizontal"
+                dataSource={course.lessons}
+                renderItem={(item) => (
+                  <List.Item>
+                    <List.Item.Meta
+                      title={
+                        <Tooltip title="Edit this lesson">
+                          <a
+                            onClick={() =>
+                              router.push(
+                                `/instructor/course/edit/${course.slug}`
+                              )
+                            }
+                          >
+                            {item.title}
+                          </a>
+                        </Tooltip>
+                      }
+                      description={item.content}
+                    />
+                  </List.Item>
+                )}
+              />
+              {/* {course.lessons.map((lesson) => (
                 <Menu
                   mode="inline"
                   openKeys={openKeys}
@@ -109,7 +148,7 @@ const CourseView = () => {
                     <Menu.Item key={lesson._id}>{lesson.content}</Menu.Item>
                   </SubMenu>
                 </Menu>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

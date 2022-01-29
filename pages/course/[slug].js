@@ -73,7 +73,7 @@ const SingleCourse = ({ course }) => {
   }, [course, user]);
 
   const checkEnrollment = async () => {
-    const { data } = await axios.get(`/api/check-enrollment/${course._id}`);
+    const { data } = await axios.get(`/api/check-enrollment/${course._id}`, {withCredentials:true});
     // console.log("CHECK ENROLLMENT => ", data);
     setEnrolled(data);
   };

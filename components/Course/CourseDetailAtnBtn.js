@@ -45,12 +45,18 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
     console.table({ values });
     let { data } = await axios.post(`/api/course/lesson/${course._id}`, values);
     console.log("LESSON ADDED AND SAVED ===> ", data);
-    setValues({ ...values, title: "", content: "", video: {} });
+    // setValues({ ...values, title: "", content: "", video: {} });
     setUploadButtonText("Upload video");
     setIsModalVisible(false);
     // push lessons to state then render
     setCourse(data);
-    // toast("Lesson added");
+    toast("Lesson added");
+    // setValues({
+    //   title: "",
+    //   content: "",
+    //   video: {},
+    // });
+    // console.table({ values });
   };
 
   const handleVideo = async (e) => {
@@ -132,10 +138,10 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   return (
     <Row justify="space-between" className={styles.CourseDetailAtnBtn}>
       <div className="media">
-        <Avatar
-          size={80}
-          src={course.image ? course.image.Location : "/course.png"}
-        />
+        {/* <Avatar
+          size={10}
+          src={course.image ? course.image.Location : "../../assets/logo.png"}
+        /> */}
         <div className="media-body pl-2">
           <div className="row">
             <div className="col">
@@ -196,11 +202,11 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
           )}
         </div>
         <Button onClick={showModal} type="primary">
-          Add Chapter
+          Add Lesson
         </Button>{" "}
       </Space>
       <Modal
-        title="Create Chapter"
+        title="Create Lesson"
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}

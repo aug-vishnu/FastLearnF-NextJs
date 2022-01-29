@@ -21,44 +21,56 @@ function ListCard({ course, withImage, slug, isPublic }) {
           />
           <div className="media-body pl-2">
             <div className="row" style={{ marginBottom: "35px" }}>
-              <div className="col-8">
-                <Badge count={course.paid ? course.price : "Free"}>
-                  <Link href={slug} className="pointer">
+              <Link href={slug} className="pointer">
+                <div className="col-8">
+                  <Badge count={course.paid ? course.price : "Free"}>
                     <a>
                       <h5 className="mt-2 text-primary courseName">
                         {course.name}
                       </h5>
                     </a>
-                  </Link>
-                </Badge>
-                <p style={{ marginTop: "-15px" }}>
-                  {course.lessons.length} Lessons
-                </p>
-                {isPublic !== "true" && course.lessons.length < 5 ? (
-                  <p
-                    style={{ marginTop: "-15px", fontSize: "10px" }}
-                    className="text-danger"
-                  >
-                    5 lessons are required to publish
+                  </Badge>
+                  <p style={{ cursor: "pointer", marginTop: "-15px" }}>
+                    {course.lessons.length} Lessons
                   </p>
-                ) : isPublic !== "true" && course.published ? (
-                  <p
-                    style={{ marginTop: "-15px", fontSize: "10px" }}
-                    className="text-success"
-                  >
-                    Your course is live in the marketplace
-                  </p>
-                ) : isPublic !== "true" ? (
-                  <p
-                    style={{ marginTop: "-15px", fontSize: "10px" }}
-                    className="text-success"
-                  >
-                    Your course is ready to be published
-                  </p>
-                ) : (
-                  <p></p>
-                )}
-              </div>
+                  {isPublic !== "true" && course.lessons.length < 5 ? (
+                    <p
+                      style={{
+                        cursor: "pointer",
+                        marginTop: "-15px",
+                        fontSize: "10px",
+                      }}
+                      className="text-danger"
+                    >
+                      5 lessons are required to publish
+                    </p>
+                  ) : isPublic !== "true" && course.published ? (
+                    <p
+                      style={{
+                        cursor: "pointer",
+                        marginTop: "-15px",
+                        fontSize: "10px",
+                      }}
+                      className="text-success"
+                    >
+                      Your course is live in the marketplace
+                    </p>
+                  ) : isPublic !== "true" ? (
+                    <p
+                      style={{
+                        cursor: "pointer",
+                        marginTop: "-15px",
+                        fontSize: "10px",
+                      }}
+                      className="text-success"
+                    >
+                      Your course is ready to be published
+                    </p>
+                  ) : (
+                    <p></p>
+                  )}
+                </div>
+              </Link>
               <div className="mt-3 col-4 float-right pr-4 text-center">
                 {course.published ? (
                   <div>

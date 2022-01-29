@@ -10,8 +10,8 @@ import { Provider } from "../context";
 import Head from "next/head";
 
 axios.defaults.withCredentials = true;
-// axios.defaults.baseURL = "https://fastlearn-api.herokuapp.com/";
-axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.baseURL = "https://fastlearn-api.herokuapp.com/";
+// axios.defaults.baseURL = "http://localhost:8000/";
 
 function MyApp({ Component, pageProps }) {
   return (

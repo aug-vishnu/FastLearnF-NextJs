@@ -111,7 +111,7 @@ const CourseView = () => {
               <List
                 itemLayout="horizontal"
                 dataSource={course.lessons}
-                renderItem={(item) => (
+                renderItem={(item, index) => (
                   <List.Item>
                     <List.Item.Meta
                       avatar={<Avatar>{index + 1}</Avatar>}

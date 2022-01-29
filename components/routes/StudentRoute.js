@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { SyncOutlined } from "@ant-design/icons";
+axios.defaults.withCredentials = true;
 
 const StudentRoute = ({ children, showNav = true }) => {
   const [ok, setOk] = useState(false);

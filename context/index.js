@@ -43,26 +43,31 @@ const Provider = ({ children }) => {
       return response;
     },
     function (error) {
+      console.log(error);
       // any status codes that falls outside the range of 2xx cause this function
       // to trigger
       let res = error.response;
-      if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
-        return new Promise((resolve, reject) => {
-          axios
-            .get("/api/logout")
-            .then((data) => {
-              console.log("/401 error > logout");
-              dispatch({ type: "LOGOUT" });
-              window.localStorage.removeItem("user");
-              router.push("/login");
-            })
-            .catch((err) => {
-              console.log("AXIOS INTERCEPTORS ERR", err);
-              reject(error);
-            });
-        });
+      console.log(res);
+      if (res) {
+        if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
+          return new Promise((resolve, reject) => {
+            axios
+              .get("/api/logout")
+              .then((data) => {
+                console.log("/401 error > logout");
+                dispatch({ type: "LOGOUT" });
+                window.localStorage.removeItem("user");
+                window.localStorage.removeItem("token");
+                router.push("/login");
+              })
+              .catch((err) => {
+                console.log("AXIOS INTERCEPTORS ERR", err);
+                reject(error);
+              });
+          });
+        }
+        return Promise.reject(error);
       }
-      return Promise.reject(error);
     }
   );
 

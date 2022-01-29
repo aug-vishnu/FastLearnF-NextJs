@@ -38,6 +38,7 @@ const Index = ({ courses, router }) => {
 
   const { state, dispatch } = useContext(Context);
   const { user } = state;
+  console.log(state);
   const userType = user;
 
   return (

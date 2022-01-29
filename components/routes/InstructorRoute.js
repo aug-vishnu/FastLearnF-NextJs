@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { SyncOutlined } from "@ant-design/icons";
 import InstructorNav from "../nav/InstructorNav";
+axios.defaults.withCredentials = true;
 
 const InstructorRoute = ({ children }) => {
   // state

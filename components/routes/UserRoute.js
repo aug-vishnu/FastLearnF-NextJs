@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { SyncOutlined } from "@ant-design/icons";
 import UserNav from "../nav/UserNav";
-
+axios.defaults.withCredentials = true;
 const UserRoute = ({ children, showNav = true }) => {
   const [ok, setOk] = useState(false);
   const router = useRouter();

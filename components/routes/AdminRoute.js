@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { SyncOutlined } from "@ant-design/icons";
 import AdminNav from "../nav/AdminNav";
+axios.defaults.withCredentials = true;
 
 const AdminRoute = ({ children }) => {
   const [ok, setOk] = useState(false);

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Context } from "../context";
 import { Col, Row, Tabs } from "antd";
-
 const Login = () => {
   const [email, setEmail] = useState("pestostudent@gmail.com");
   const [password, setPassword] = useState("pestostudent");
@@ -32,18 +31,24 @@ const Login = () => {
     // console.table({ name, email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`/api/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `/api/login`,
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
       console.log("LOGIN RESPONSE", data);
       // setLoading(false);
       dispatch({
         type: "LOGIN",
-        payload: data,
+        payload: data["user"],
       });
       // save in local storage
-      window.localStorage.setItem("user", JSON.stringify(data));
+      console.log(data);
+      window.localStorage.setItem("user", JSON.stringify(data["user"]));
+      window.localStorage.setItem("token", JSON.stringify(data["token"]));
       router.push("/");
     } catch (err) {
       // toast(err.response.data);

@@ -15,7 +15,9 @@ const UserIndex = () => {
   }, []);
 
   const loadCourses = async () => {
-    const { data } = await axios.get(`/api/user-courses`);
+    const { data } = await axios.get(`/api/user-courses`, {
+      withCredentials: true,
+    });
     console.log(data);
     setCourses(data);
   };

@@ -21,8 +21,9 @@ const SingleCourseLessons = ({
               <Item.Meta
                 avatar={<Avatar>{index + 1}</Avatar>}
                 title={item.title}
+                description={item.content}
               />
-              {item.video && item.video !== null && item.free_preview && (
+              {/* {item.video && item.video !== null && item.free_preview && (
                 <span
                   onClick={() => {
                     setPreview(item.video.Location);
@@ -32,7 +33,7 @@ const SingleCourseLessons = ({
                 >
                   Preview
                 </span>
-              )}
+              )} */}
             </Item>
           )}
         />

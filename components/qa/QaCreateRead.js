@@ -104,7 +104,7 @@ const QaCreateRead = ({
 
       {/* <pre>{JSON.stringify(clickedLessonQa, null, 4)}</pre> */}
 
-      <div className="row pt-4">
+      <div className="row pt-4 px-4">
         {clickedLessonQa.map((q) => (
           <div key={q._id} className="col-md-12 pt-2 pb-4">
             {/* {JSON.stringify(q)} */}
@@ -244,10 +244,10 @@ const QaCreateRead = ({
         ))}
 
         {!visible && (
-          <div className="d-flex justify-content-center pt-4">
+          <div className="d-flex justify-content-end pt-4">
             <Button
               onClick={() => setVisible(true)}
-              className="btnGrad text-center"
+              className="btnGrad text-center "
               type="primary"
               icon={<QuestionCircleOutlined />}
               block

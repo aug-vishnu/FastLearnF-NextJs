@@ -135,7 +135,6 @@ const SingleCourseJumbotron = ({
             className="btnGrad"
             disabled={loading}
             onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
-            // style={{ width: "342px" }}
           >
             {user
               ? enrolled.status
@@ -143,7 +142,7 @@ const SingleCourseJumbotron = ({
                 : // <Link href={`/user/course/${enrolled.course.slug}`}>
                   //   <a className="text-light"> Go to course</a>
                   // </Link>
-                  "Enroll"
+                  "Enroll Now"
               : "Login to enroll"}
           </Button>
         </div>

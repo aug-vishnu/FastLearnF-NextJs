@@ -9,6 +9,7 @@ import {
   CheckCircleFilled,
   MinusCircleFilled,
   PieChartOutlined,
+  ArrowLeftOutlined,
 } from "@ant-design/icons";
 import StudentRoute from "../../../components/routes/StudentRoute";
 import ReactPlayer from "react-player";
@@ -322,6 +323,14 @@ const SingleCourse = () => {
         {/* {JSON.stringify(completedLessons)} */}
         <div style={{ maxWidth: 320 }}>
           <Button
+            onClick={() => router.push(`/course/${slug}`)}
+            className="text-dark btn btn-block mt-1 btn mb-2"
+            disabled={onlyWidth < 800}
+          >
+            {createElement(collapsed ? ArrowLeftOutlined : ArrowLeftOutlined)}
+            {!collapsed && "Go back "}
+          </Button>
+          <Button
             onClick={() => setCollapsed(!collapsed)}
             className="text-primary mt-1 btn-block mb-2"
             disabled={onlyWidth < 800}
@@ -329,7 +338,6 @@ const SingleCourse = () => {
             {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
             {!collapsed && "Lessons"}
           </Button>
-
           {/* how many completed */}
           {!collapsed && course && (
             <div className="pt-2" style={{ borderBottom: "3px solid #222" }}>
@@ -355,7 +363,7 @@ const SingleCourse = () => {
                 onClick={() => setClicked(index)}
                 key={index}
                 icon={
-                  <Avatar>
+                  <Avatar size={24}>
                     <span>{index + 1}</span>
                   </Avatar>
                 }
@@ -400,7 +408,7 @@ const SingleCourse = () => {
                   </span>
                 ) : (
                   <span className="float-right pointer" onClick={markCompleted}>
-                    Mark as completed
+                    Mark as complete
                   </span>
                 )}
               </div>
@@ -415,7 +423,7 @@ const SingleCourse = () => {
                           // playing
                           // light="/images/default/player.png"
                           url={course.lessons[clicked].video.Location}
-                          width="50%"
+                          width="500%"
                           height="10%"
                           controls
                         />
@@ -423,14 +431,14 @@ const SingleCourse = () => {
                       <hr />
                     </>
                   )}
-                <span className="contentArea shadow">
+                <div className="contentArea shadow">
                   {/* <ReactMarkdown
                   source={course.lessons[clicked].content}
                   renderers={{ code: CodeBlock }}
                   className="single-post"
                   /> */}
                   {course.lessons[clicked].content}
-                </span>
+                </div>
                 {/* qa */}
                 <br />
 
@@ -496,8 +504,8 @@ const SingleCourse = () => {
             <div className="d-flex justify-content-center p-5">
               <div className="text-center p-5">
                 {/* <div className="pt-5"></div> */}
-                <PlayCircleOutlined className="text-primary display-1 p-5" />
-                <h2>Start Learning</h2>
+                {/* <PlayCircleOutlined className="text-primary display-1 p-5" /> */}
+                <h1>Start Learning</h1>
                 <p className="lead">
                   Click the lessons on the sidebar to start.
                 </p>

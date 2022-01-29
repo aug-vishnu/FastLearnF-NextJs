@@ -114,6 +114,7 @@ const CourseView = () => {
                 renderItem={(item) => (
                   <List.Item>
                     <List.Item.Meta
+                      avatar={<Avatar>{index + 1}</Avatar>}
                       title={
                         <Tooltip title="Edit this lesson">
                           <a

@@ -7,13 +7,18 @@ import "../styles/antd.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "../context";
+import Head from "next/head";
 
+axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = "https://fastlearn-api.herokuapp.com/";
 axios.defaults.baseURL = "http://localhost:8000/";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider>
+      <Head>
+        <title>FastLearn </title>
+      </Head>
       <ToastContainer position="top-center" />
       <TopNav />
       <Component {...pageProps} />

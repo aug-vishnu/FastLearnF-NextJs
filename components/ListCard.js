@@ -11,14 +11,14 @@ function ListCard({ course, withImage, slug, isPublic }) {
     <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 6 }}>
       <Row className={styles.ListCard}>
         <Space direction="vertical">
-          <Avatar
+          {/* <Avatar
             shape="square"
             src={
               course.image && course.image
                 ? course.image.Location
                 : "https://cdn.discordapp.com/attachments/820608670810243133/913059106061946930/orionthemes-placeholder-image.png"
             }
-          />
+          /> */}
           <div className="media-body pl-2">
             <div className="row" style={{ marginBottom: "35px" }}>
               <Link href={slug} className="pointer">

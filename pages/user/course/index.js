@@ -22,10 +22,7 @@ const StudentIndex = ({ courses, router }) => {
       <Row justify="start">
         {courses &&
           courses.map((course) => (
-            <ListCard
-              course={course}
-              slug={`/instructor/course/view/${course.slug}`}
-            />
+            <ListCard course={course} slug={`/course/${course.slug}`} />
           ))}
       </Row>
     </div>

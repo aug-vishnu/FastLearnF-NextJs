@@ -24,11 +24,6 @@
 .ant-btn {
   border-radius: 5px;
 }
-.contentArea {
-  margin: 1rem 3rem;
-  padding: 2rem;
-  background-color: #fff;
-}
 
 .w60 {
   width: 60% !important;
@@ -68,10 +63,10 @@
   border-radius: 6px;
 }
 
-.ant-avatar {
+/* .ant-avatar {
   width: 100% !important;
   min-height: 120px !important;
-}
+} */
 
 .courseName {
   min-width: 10vw;

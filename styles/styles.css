@@ -16,7 +16,8 @@ h5 {
 }
 
 .container {
-  max-width: 1450px !important;
+  width: 100vw;
+  max-width: 1250px !important;
   margin-top: 2rem;
   padding: 0 3rem;
 }
@@ -178,4 +179,12 @@ section {
   .heroSection h3 {
     width: 100%;
   }
+}
+
+.contentArea {
+  margin: 1rem 0rem;
+  width: 100% !important;
+  min-height: 50vh !important;
+  padding: 2rem;
+  background-color: #fff;
 }

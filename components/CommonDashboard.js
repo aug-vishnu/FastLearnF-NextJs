@@ -22,9 +22,11 @@ function CommonDashboard({ courses, isPublic }) {
           />
         </Col>
       </Row>
-      <Row justify="center">
-        <h2 className="text-center mt-5 mb-3">Our courses</h2>
-      </Row>
+      {courses.length != 0 && (
+        <Row justify="center">
+          <h2 className="text-center mt-5 mb-3">Our courses</h2>
+        </Row>
+      )}
       <Row justify="center">
         {courses &&
           courses.map((course) => (
@@ -35,10 +37,11 @@ function CommonDashboard({ courses, isPublic }) {
             />
           ))}
       </Row>
-
-      <Row justify="center">
-        <h2 className="text-center mt-5 pt-3 mb-5">Feature courses</h2>
-      </Row>
+      {courses.length != 0 && (
+        <Row justify="center">
+          <h2 className="text-center mt-5 pt-3 mb-5">Feature courses</h2>
+        </Row>
+      )}
 
       {courses &&
         courses.map((course) => (

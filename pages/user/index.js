@@ -5,6 +5,7 @@ import { Button, Row } from "antd";
 import Link from "next/link";
 import { SyncOutlined } from "@ant-design/icons";
 import CourseCard from "../../components/cards/CourseCard";
+import { Empty } from "antd";
 
 const UserIndex = () => {
   const [courses, setCourses] = useState([]);
@@ -26,18 +27,16 @@ const UserIndex = () => {
     <UserRoute>
       <Row justify="space-between" align="middle" className="mb-5">
         <h2 className="text-center mt-3 ml-2 left-bottom-radius">
-          My courses ( {courses.length} )
+          List of your courses ( {courses.length} )
         </h2>
 
-        {!courses.length && (
-          <Button href="/" type="primary">
-            Browse Courses
-          </Button> // <Link href="/">
-          //   <a className="btn btn-primary float-right mt-2">Browse Courses</a>
-          // </Link>
-        )}
+        <Button href="/user/course/" type="primary">
+          Browse Courses
+        </Button>
       </Row>
-
+      {!courses.length && (
+        <Empty className="pt-5" description="No Courses Enrolled" />
+      )}
       {loading && (
         <SyncOutlined
           spin

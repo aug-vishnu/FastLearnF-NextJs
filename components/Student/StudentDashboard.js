@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Image, Row, Space, Table } from "antd";
-import { columns, data } from "../../context/dummy";
 import StudentCta from "./StudentCta";
 import CourseCard from "../cards/CourseCard";
 import Footer from "../Footer";
+import { Empty } from "antd";
 
 function StudentDashboard({ courses }) {
   return (
@@ -17,7 +17,13 @@ function StudentDashboard({ courses }) {
         </Col> */}
         <Col span={24}>
           {" "}
-          <h3 className="mb-4">In progress Courses</h3>
+          <h3 className="mb-4">In progress Courses ({courses.length}) </h3>
+          {!courses.length && (
+            <Empty
+              className="pt-5"
+              description="You haven't enrolled course Yet"
+            />
+          )}
           <div className="row pt-2">
             {courses.map((course) => (
               <div key={course._id} className="col-md-12">

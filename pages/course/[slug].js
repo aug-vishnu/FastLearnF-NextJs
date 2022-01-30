@@ -20,9 +20,7 @@ const SingleCourse = ({ course }) => {
   // head
   const head = () => (
     <Head>
-      <title>
-        {course.name} | {process.env.APP_NAME}
-      </title>
+      <title>{course.name} | FastLearn</title>
       <meta
         name="description"
         content={markdownToTxt(course.description.substring(0, 300))}

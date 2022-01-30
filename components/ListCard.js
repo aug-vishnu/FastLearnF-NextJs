@@ -7,7 +7,6 @@ import { Col, Row, Space } from "antd";
 import { CloseCircleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 function ListCard({ course, withImage, slug, isPublic }) {
-  slug = `https://fastlearn-api.herokuapp.com/api/course/${slug}`;
   return (
     <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 6 }}>
       <Row className={styles.ListCard}>

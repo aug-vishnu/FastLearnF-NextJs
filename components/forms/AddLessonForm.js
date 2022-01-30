@@ -1,4 +1,4 @@
-import { Button, Progress, Tooltip } from "antd";
+import { Button, Progress, Select, Tooltip } from "antd";
 import { CloseCircleFilled, CloseCircleOutlined } from "@ant-design/icons";
 
 const AddLessonForm = ({
@@ -35,6 +35,52 @@ const AddLessonForm = ({
           values={values.content}
           placeholder="Lesson Description"
         ></textarea>
+        <div className="form-row">
+          <div className="col">
+            <div className="form-group">
+              <label htmlFor="">Course Type</label>
+
+              <Select
+                style={{ width: "100%" }}
+                size="large"
+                value={values.type}
+                onChange={(e) => setValues({ ...values, type: e })}
+              >
+                <Option value={"Content"}>Only Content</Option>
+                <Option value={"Video"}>Youtube Video</Option>
+                <Option value={"Form"}>Google Form</Option>
+              </Select>
+            </div>
+          </div>
+        </div>
+        {values.type == "Video" && (
+          <>
+            <label htmlFor="">YouTube Link</label>
+            <input
+              type="text"
+              className="form-control square"
+              onChange={(e) => setValues({ ...values, url: e.target.value })}
+              values={values.title}
+              placeholder="Paste the Video URL"
+              autoFocus
+              required
+            />
+          </>
+        )}
+        {values.type == "Form" && (
+          <>
+            <label htmlFor="">Google Forms</label>
+            <input
+              type="text"
+              className="form-control square"
+              onChange={(e) => setValues({ ...values, url: e.target.value })}
+              values={values.title}
+              placeholder="Paste the Form URL"
+              autoFocus
+              required
+            />
+          </>
+        )}
         {/* <label htmlFor="" className="mt-3">
           Lesson Cover
         </label>

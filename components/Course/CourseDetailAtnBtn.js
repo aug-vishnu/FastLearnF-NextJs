@@ -22,6 +22,8 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   const [values, setValues] = useState({
     title: "",
     content: "",
+    url: "",
+    type: "Content", // 1 - Only Content, 2 - YouTube, 3 - Form
     video: {},
   });
 
@@ -51,12 +53,6 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
     // push lessons to state then render
     setCourse(data);
     toast("Lesson added");
-    // setValues({
-    //   title: "",
-    //   content: "",
-    //   video: {},
-    // });
-    // console.table({ values });
   };
 
   const handleVideo = async (e) => {

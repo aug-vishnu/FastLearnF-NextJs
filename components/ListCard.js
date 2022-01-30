@@ -21,7 +21,7 @@ function ListCard({ course, withImage, slug, isPublic }) {
           /> */}
           <div className="media-body pl-2">
             <div className="row" style={{ marginBottom: "35px" }}>
-              <Link href={slug} className="pointer">
+              <a href={slug} className="pointer">
                 <div className="col-8">
                   <Badge count={course.paid ? course.price : "Free"}>
                     <a>
@@ -70,7 +70,7 @@ function ListCard({ course, withImage, slug, isPublic }) {
                     <p></p>
                   )}
                 </div>
-              </Link>
+              </a>
               <div className="mt-3 col-4 float-right pr-4 text-center">
                 {course.published ? (
                   <div>
@@ -88,11 +88,11 @@ function ListCard({ course, withImage, slug, isPublic }) {
               </div>
             </div>
           </div>
-          <Link href={slug}>
+          <a href={slug}>
             <Row justify="end" className="pointer">
               <DoubleRightOutlined className={styles.btnNext} />
             </Row>
-          </Link>
+          </a>
         </Space>
       </Row>
     </Col>

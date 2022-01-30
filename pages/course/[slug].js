@@ -73,9 +73,7 @@ const SingleCourse = ({ course }) => {
   }, [course, user]);
 
   const checkEnrollment = async () => {
-    const { data } = await axios.get(`/api/check-enrollment/${course._id}`, {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(`/api/check-enrollment/${course._id}`);
     // console.log("CHECK ENROLLMENT => ", data);
     setEnrolled(data);
   };
@@ -177,7 +175,7 @@ const SingleCourse = ({ course }) => {
 
 export async function getServerSideProps({ query }) {
   const { data } = await axios.get(
-    `https://fastlearn-api.herokuapp.com/api/course/${query.slug}`
+    `${process.env.API}/course/public/${query.slug}`
   );
   return {
     props: {

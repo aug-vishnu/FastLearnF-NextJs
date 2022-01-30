@@ -73,7 +73,9 @@ const SingleCourse = ({ course }) => {
   }, [course, user]);
 
   const checkEnrollment = async () => {
-    const { data } = await axios.get(`/api/check-enrollment/${course._id}`, {withCredentials:true});
+    const { data } = await axios.get(`/api/check-enrollment/${course._id}`, {
+      withCredentials: true,
+    });
     // console.log("CHECK ENROLLMENT => ", data);
     setEnrolled(data);
   };
@@ -93,8 +95,8 @@ const SingleCourse = ({ course }) => {
       // load stripe for payment
       // on successful payment, user will get redirected to /stripe/success page
 
-    //   const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
-    //   stripe.redirectToCheckout({ sessionId: data });
+      //   const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
+      //   stripe.redirectToCheckout({ sessionId: data });
     } catch (err) {
       toast("Enrollment failed, Try again.");
       // console.log(err);
@@ -175,7 +177,7 @@ const SingleCourse = ({ course }) => {
 
 export async function getServerSideProps({ query }) {
   const { data } = await axios.get(
-    `${process.env.API}/course/public/${query.slug}`
+    `https://fastlearn-api.herokuapp.com/api/course/${query.slug}`
   );
   return {
     props: {

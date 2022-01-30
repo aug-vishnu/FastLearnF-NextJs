@@ -25,11 +25,11 @@ const CourseCard = ({ course, slug }) => {
               /> */}
                   <div className="col">
                     <Badge count={course.paid ? course.price : "Free"}>
-                      <a href={slug} className="pointer">
+                      <Link href={slug} className="pointer">
                         <a>
                           <h5 className="my-2 text-primary">{course.name}</h5>
                         </a>
-                      </a>
+                      </Link>
                     </Badge>
                     <p style={{ marginTop: "-10px", width: "200px" }}>
                       {course.lessons.length} Lessons -{" "}
@@ -79,11 +79,11 @@ const CourseCard = ({ course, slug }) => {
                   </div>
                 )}
               </div>
-              <a href={slug}>
+              <Link href={slug}>
                 <Row justify="end" className="pointer">
                   <DoubleRightOutlined className={styles.btnNext} />
                 </Row>
-              </a>
+              </Link>
             </Space>
           </Row>
         </Col>

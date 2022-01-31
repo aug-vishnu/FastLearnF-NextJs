@@ -12,7 +12,7 @@ const CourseCard = ({ course, slug }) => {
   // destructure
   // const { name, instructor, price, image, slug, paid, categories } = course;
   return (
-    <Link href="/course/[slug]" as={slug}>
+    <a href={slug}>
       <a>
         <Col>
           <Row className={styles.CourseCard} justify="space-between">
@@ -88,7 +88,7 @@ const CourseCard = ({ course, slug }) => {
           </Row>
         </Col>
       </a>
-    </Link>
+    </a>
   );
 };
 

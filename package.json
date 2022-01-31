@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
+    "@ckeditor/ckeditor5-build-classic": "^32.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.3",
     "@react-hook/window-size": "^3.0.7",
     "antd": "^4.13.1",
     "axios": "^0.21.1",

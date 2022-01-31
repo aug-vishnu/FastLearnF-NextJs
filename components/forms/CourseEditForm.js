@@ -1,12 +1,13 @@
 import { Select, Button, Avatar, Badge } from "antd";
 import { useRouter } from "next/router";
-import MarkdownCheetsheet from "../../components/modal/MarkdownCheatsheet";
-
 const { Option } = Select;
+import React, { useState, useEffect, useRef } from "react";
 
 const CourseEditForm = ({
   values,
   setValues,
+  content,
+  setContent,
   handleChange,
   handleImage,
   handleSubmit,
@@ -18,16 +19,26 @@ const CourseEditForm = ({
   markdownCheetsheetModal,
   setMarkdownCheetsheetModal = (f) => f,
 }) => {
+  const editorRef = useRef();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor } = editorRef.current || {};
+  useEffect(() => {
+    editorRef.current = {
+      // CKEditor: require("@ckeditor/ckeditor5-react"), // depricated in v3
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
   // generate price
   const children = [];
   for (let i = 1.99; i <= 999.99; i++) {
     children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>);
   }
-
   // router
   const router = useRouter();
 
-  return (
+  return editorLoaded ? (
     <>
       {values && (
         <form onSubmit={handleSubmit}>
@@ -43,7 +54,7 @@ const CourseEditForm = ({
               />
             </div>
 
-            <div>
+            {/* <div>
               <Avatar
                 src={values.image && values.image.Location}
                 size={38}
@@ -62,10 +73,10 @@ const CourseEditForm = ({
                   hidden
                 />
               </label>
-            </div>
+            </div> */}
           </div>
 
-          <div
+          {/* <div
             onClick={() => setMarkdownCheetsheetModal(!markdownCheetsheetModal)}
             className="text-center mb-4 pointer"
             style={{ height: "10px" }}
@@ -75,9 +86,17 @@ const CourseEditForm = ({
           <MarkdownCheetsheet
             markdownCheetsheetModal={markdownCheetsheetModal}
             setMarkdownCheetsheetModal={setMarkdownCheetsheetModal}
-          />
-
-          <div className="form-row">
+          /> */}
+          <CKEditor
+            editor={ClassicEditor}
+            data={values.description}
+            onChange={(event, editor) => {
+              if (values) {
+                setContent(editor.getData());
+              }
+            }}
+          ></CKEditor>
+          {/* <div className="form-row">
             <div className="col">
               <textarea
                 name="description"
@@ -90,7 +109,7 @@ const CourseEditForm = ({
                 required
               ></textarea>
             </div>
-          </div>
+          </div> */}
 
           <div className="form-row pt-3">
             <div className="col">
@@ -124,7 +143,7 @@ const CourseEditForm = ({
             )}
           </div>
 
-          <div className="form-row">
+          {/* <div className="form-row">
             <div className="col">
               <div className="form-group">
                 <Select
@@ -144,7 +163,7 @@ const CourseEditForm = ({
                 </Select>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="row">
             <div className="col">
@@ -176,6 +195,8 @@ const CourseEditForm = ({
         </form>
       )}
     </>
+  ) : (
+    <div>Editor loading</div>
   );
 };
 

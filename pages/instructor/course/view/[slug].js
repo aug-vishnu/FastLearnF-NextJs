@@ -117,7 +117,7 @@ const CourseView = () => {
                       avatar={<Avatar>{index + 1}</Avatar>}
                       title={
                         <Tooltip title="Edit this lesson">
-                          <a
+                          <h4
                             onClick={() =>
                               router.push(
                                 `/instructor/course/edit/${course.slug}`
@@ -125,10 +125,9 @@ const CourseView = () => {
                             }
                           >
                             {item.title}
-                          </a>
+                          </h4>
                         </Tooltip>
                       }
-                      description={item.content}
                     />
                   </List.Item>
                 )}

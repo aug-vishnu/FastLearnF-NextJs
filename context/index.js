@@ -57,7 +57,6 @@ const Provider = ({ children }) => {
                 console.log("/401 error > logout");
                 dispatch({ type: "LOGOUT" });
                 window.localStorage.removeItem("user");
-                window.localStorage.removeItem("token");
                 router.push("/login");
               })
               .catch((err) => {

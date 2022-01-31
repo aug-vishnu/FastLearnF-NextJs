@@ -25,6 +25,7 @@ const CourseEdit = () => {
     lessons: [],
     instructor: {},
   });
+  const [content, setContent] = useState({});
 
   const [categoryList, setCategoryList] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -59,7 +60,7 @@ const CourseEdit = () => {
 
   const fetchCourse = async () => {
     let { data } = await axios.get(`/api/course/${slug}`);
-    // console.log(data);
+    console.log(data);
     setValues(data);
     // push array of categories to be used by ant select component
     if (data) {
@@ -82,10 +83,14 @@ const CourseEdit = () => {
 
   const handleSubmit = async (e) => {
     // console.log("HANDLE SUBMIT => ", values);
+    setValues({ ...values, description: content });
+    console.log(content);
+    console.log(values);
     try {
       const { data } = await axios.put(`/api/course/${values._id}`, {
         ...values,
         categories: selectedCategories,
+        description: content,
       });
       // console.log(data);
       toast("Course Updated!");
@@ -260,6 +265,8 @@ const CourseEdit = () => {
         <CourseEditForm
           values={values}
           setValues={setValues}
+          content={content}
+          setContent={setContent}
           handleChange={handleChange}
           handleImage={handleImage}
           handleSubmit={handleSubmit}
@@ -313,8 +320,8 @@ const CourseEdit = () => {
       </div>
 
       <Modal
-        title="Update"
-        // width={720}
+        title="Update Lesson"
+        width={900}
         centered
         visible={visible}
         onCancel={() => setVisible(false)}

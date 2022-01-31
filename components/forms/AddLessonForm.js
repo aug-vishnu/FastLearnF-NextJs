@@ -1,5 +1,5 @@
 import { Button, Progress, Select, Tooltip } from "antd";
-import { CloseCircleFilled, CloseCircleOutlined } from "@ant-design/icons";
+import React, { useState, useEffect, useRef } from "react";
 
 const AddLessonForm = ({
   values,
@@ -11,7 +11,18 @@ const AddLessonForm = ({
   progress,
   handleVideoRemove,
 }) => {
-  return (
+  const editorRef = useRef();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor } = editorRef.current || {};
+  useEffect(() => {
+    editorRef.current = {
+      // CKEditor: require("@ckeditor/ckeditor5-react"), // depricated in v3
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
+  return editorLoaded ? (
     <div className="">
       <form onSubmit={handleAddLesson}>
         <label htmlFor="">Lesson Name</label>
@@ -26,16 +37,22 @@ const AddLessonForm = ({
           required
         />
         <label htmlFor="">Lesson Description</label>
-
-        <textarea
+        <CKEditor
+          editor={ClassicEditor}
+          data={values.content}
+          onChange={(event, editor) => {
+            setValues({ ...values, content: editor.getData() });
+          }}
+        ></CKEditor>
+        {/* <textarea
           className="form-control mt-3"
           cols="7"
           rows="7"
           onChange={(e) => setValues({ ...values, content: e.target.value })}
           values={values.content}
           placeholder="Lesson Description"
-        ></textarea>
-        <div className="form-row">
+        ></textarea> */}
+        {/* <div className="form-row">
           <div className="col">
             <div className="form-group">
               <label htmlFor="">Course Type</label>
@@ -52,7 +69,7 @@ const AddLessonForm = ({
               </Select>
             </div>
           </div>
-        </div>
+        </div> */}
         {values.type == "Video" && (
           <>
             <label htmlFor="">YouTube Link</label>
@@ -119,6 +136,8 @@ const AddLessonForm = ({
         </Button>
       </form>
     </div>
+  ) : (
+    <div>Editor loading</div>
   );
 };
 

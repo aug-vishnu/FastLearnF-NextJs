@@ -64,7 +64,7 @@ const TopNav = () => {
       window.localStorage.removeItem("user");
       if (data) {
         toast(data.message);
-        router.push("/login");
+        router.push("/");
       }
     } catch (err) {
       toast("Logout failed. Try again.");

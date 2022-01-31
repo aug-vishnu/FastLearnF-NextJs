@@ -205,6 +205,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
         title="Create Lesson"
         visible={isModalVisible}
         onOk={handleOk}
+        width={900}
         onCancel={handleCancel}
         footer={[]}
       >

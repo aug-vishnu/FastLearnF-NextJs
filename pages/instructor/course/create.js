@@ -86,7 +86,7 @@ const CourseCreate = () => {
   return (
     <InstructorRoute>
       <Row justify="center" align="middle" className="singleForm">
-        <Col md={{ span: 20 }} lg={{ span: 7 }}>
+        <Col md={{ span: 20 }} lg={{ span: 20 }}>
           <h1>Course creation form</h1>{" "}
           <div className="pt-3 pb-3">
             <CourseCreateForm

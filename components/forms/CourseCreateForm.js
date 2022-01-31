@@ -1,4 +1,5 @@
 import { Select, Button, Avatar, Badge } from "antd";
+import React, { useState, useEffect, useRef } from "react";
 
 const { Option } = Select;
 
@@ -13,11 +14,23 @@ const CourseCreateForm = ({
   handleImageRemove = (f) => f,
   editPage = false,
 }) => {
+  // console.log(current);
+  const editorRef = useRef();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor } = editorRef.current || {};
+  useEffect(() => {
+    editorRef.current = {
+      // CKEditor: require("@ckeditor/ckeditor5-react"), // depricated in v3
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
   const children = [];
   for (let i = 9.99; i <= 100.99; i++) {
     children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>);
   }
-  return (
+  return editorLoaded ? (
     <>
       {values && (
         <form onSubmit={handleSubmit}>
@@ -35,15 +48,21 @@ const CourseCreateForm = ({
 
           <div className="form-group">
             <label htmlFor="">Course Description</label>
-
-            <textarea
+            <CKEditor
+              editor={ClassicEditor}
+              data={values.description}
+              onChange={(event, editor) => {
+                setValues({ ...values, description: editor.getData() });
+              }}
+            ></CKEditor>
+            {/* <textarea
               name="description"
               cols="7"
               rows="7"
               value={values.description}
               className="form-control"
               onChange={handleChange}
-            ></textarea>
+            ></textarea> */}
           </div>
 
           <div className="form-row">
@@ -77,7 +96,7 @@ const CourseCreateForm = ({
               </div>
             )}
           </div>
-
+          {/* 
           <div className="form-group">
             <label htmlFor="">Course Category</label>
 
@@ -89,9 +108,9 @@ const CourseCreateForm = ({
               value={values.category}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
 
-          <label htmlFor="">Course Cover</label>
+          {/* <label htmlFor="">Course Cover</label>
           <div className="form-row">
             <div className="col">
               <div className="form-group">
@@ -117,7 +136,7 @@ const CourseCreateForm = ({
             {editPage && values.image && (
               <Avatar width={200} src={values.image.Location} />
             )}
-          </div>
+          </div> */}
 
           <div className="row">
             <div className="col">
@@ -137,6 +156,8 @@ const CourseCreateForm = ({
         </form>
       )}
     </>
+  ) : (
+    <></>
   );
 };
 

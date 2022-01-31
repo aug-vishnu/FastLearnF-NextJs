@@ -302,8 +302,8 @@ const CourseEdit = () => {
               >
                 <Item.Meta
                   onClick={() => {
-                    setVisible(true);
                     setCurrent(item);
+                    setVisible(true);
                   }}
                   avatar={<Avatar>{index + 1}</Avatar>}
                   title={item.title}

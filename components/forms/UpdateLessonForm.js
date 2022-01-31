@@ -1,4 +1,4 @@
-import { Button, Progress, Switch } from "antd";
+import { Button, Progress, Select, Switch } from "antd";
 import { CloseCircleFilled } from "@ant-design/icons";
 import ReactPlayer from "react-player";
 import MarkdownCheetsheet from "../modal/MarkdownCheatsheet";
@@ -15,6 +15,7 @@ const UpdateLessonForm = ({
   markdownCheetsheetModal,
   setMarkdownCheetsheetModal = (f) => f,
 }) => {
+  console.log(current);
   const editorRef = useRef();
   const [editorLoaded, setEditorLoaded] = useState(false);
   const { CKEditor, ClassicEditor } = editorRef.current || {};
@@ -57,6 +58,52 @@ const UpdateLessonForm = ({
             setCurrent({ ...current, content: editor.getData() });
           }}
         ></CKEditor>
+        <div className="form-row pt-3">
+          <div className="col">
+            <div className="form-group">
+              <label htmlFor="">Course Type</label>
+
+              <Select
+                style={{ width: "100%" }}
+                size="large"
+                value={current.type}
+                onChange={(e) => setCurrent({ ...current, type: e })}
+              >
+                <Option value={"Content"}>Only Content</Option>
+                <Option value={"Video"}>Youtube Video</Option>
+                <Option value={"Form"}>Google Form</Option>
+              </Select>
+            </div>
+          </div>
+        </div>
+        {current.type == "Video" && (
+          <>
+            <label htmlFor="">YouTube Link</label>
+            <input
+              type="text"
+              className="form-control square"
+              onChange={(e) => setCurrent({ ...current, url: e.target.value })}
+              values={current.url}
+              placeholder="Paste the Video URL"
+              autoFocus
+              required
+            />
+          </>
+        )}
+        {current.type == "Form" && (
+          <>
+            <label htmlFor="">Google Forms</label>
+            <input
+              type="text"
+              className="form-control square"
+              onChange={(e) => setCurrent({ ...current, url: e.target.value })}
+              values={current.url}
+              placeholder="Paste the Form URL"
+              autoFocus
+              required
+            />
+          </>
+        )}
         {/* <textarea
           className="form-control mt-3"
           onChange={(e) => setCurrent({ ...current, content: e.target.value })}
@@ -108,7 +155,6 @@ const UpdateLessonForm = ({
           size="large"
           type="primary"
           loading={uploading}
-          shape="round"
           disabled={uploading}
         >
           Save

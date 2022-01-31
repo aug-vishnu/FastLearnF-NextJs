@@ -46,7 +46,7 @@ const SingleCourseJumbotron = ({
           <h1 className="font-weight-bold">{name}</h1>
           {/* description */}
           <p className="lead">
-            {description && description.substring(0, 160)}..
+            <div dangerouslySetInnerHTML={{ __html: description }} />
           </p>
           {/* categories */}
           {/* {categories.map((c) => (

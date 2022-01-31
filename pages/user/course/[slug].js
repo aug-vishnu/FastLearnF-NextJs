@@ -414,7 +414,7 @@ const SingleCourse = () => {
               </div>
 
               <div>
-                {course.lessons[clicked].video &&
+                {/* {course.lessons[clicked].video &&
                   course.lessons[clicked].video.Location && (
                     <>
                       <div className="wrapper">
@@ -430,14 +430,38 @@ const SingleCourse = () => {
                       </div>
                       <hr />
                     </>
-                  )}
+                  )} */}
                 <div className="contentArea shadow">
                   {/* <ReactMarkdown
                   source={course.lessons[clicked].content}
                   renderers={{ code: CodeBlock }}
                   className="single-post"
                   /> */}
-                  {course.lessons[clicked].content}
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: course.lessons[clicked].content,
+                    }}
+                  />
+                  {course.lessons[clicked].type == "Video" ? (
+                    <iframe
+                      width="720"
+                      height="405"
+                      src={course.lessons[clicked].url}
+                    ></iframe>
+                  ) : course.lessons[clicked].type == "Form" ? (
+                    <iframe
+                      src={`${course.lessons[clicked].url}?embedded=true`}
+                      width="700"
+                      height="10000"
+                      frameborder="0"
+                      marginheight="0"
+                      marginwidth="0"
+                    >
+                      Loading…
+                    </iframe>
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 {/* qa */}
                 <br />

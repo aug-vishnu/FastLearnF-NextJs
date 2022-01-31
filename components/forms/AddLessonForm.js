@@ -52,7 +52,7 @@ const AddLessonForm = ({
           values={values.content}
           placeholder="Lesson Description"
         ></textarea> */}
-        {/* <div className="form-row">
+        <div className="form-row pt-3">
           <div className="col">
             <div className="form-group">
               <label htmlFor="">Course Type</label>
@@ -69,7 +69,7 @@ const AddLessonForm = ({
               </Select>
             </div>
           </div>
-        </div> */}
+        </div>
         {values.type == "Video" && (
           <>
             <label htmlFor="">YouTube Link</label>

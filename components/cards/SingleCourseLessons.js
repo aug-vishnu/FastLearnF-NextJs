@@ -21,7 +21,7 @@ const SingleCourseLessons = ({
               <Item.Meta
                 avatar={<Avatar>{index + 1}</Avatar>}
                 title={item.title}
-                description={item.content}
+                // description={item.content}
               />
               {/* {item.video && item.video !== null && item.free_preview && (
                 <span

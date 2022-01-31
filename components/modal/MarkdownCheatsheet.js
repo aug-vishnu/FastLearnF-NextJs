@@ -18,7 +18,7 @@ const MarkdownCheetcheet = ({
           <li>
             Wrap code blocks using 3 backticks <br />
             <code>
-              ```js <br /> console.log('you can post code using markdown'){" "}
+              ```js <br /> // console.log('you can post code using markdown'){" "}
               <br />
               ```
             </code>

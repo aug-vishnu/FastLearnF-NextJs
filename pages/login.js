@@ -39,14 +39,14 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      console.log("LOGIN RESPONSE", data);
+      // console.log("LOGIN RESPONSE", data);
       // setLoading(false);
       dispatch({
         type: "LOGIN",
         payload: data["user"],
       });
       // save in local storage
-      console.log(data);
+      // console.log(data);
       window.localStorage.setItem("user", JSON.stringify(data["user"]));
       window.localStorage.setItem("token", JSON.stringify(data["token"]));
       router.push("/");

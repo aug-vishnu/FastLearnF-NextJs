@@ -37,7 +37,7 @@ const Index = ({ courses, router }) => {
 
   const { state, dispatch } = useContext(Context);
   const { user } = state;
-  console.log(state);
+  // console.log(state);
   const userType = user;
 
   return (
@@ -62,7 +62,7 @@ const Index = ({ courses, router }) => {
 
 export async function getServerSideProps() {
   const { data } = await axios.get(`/api/courses`);
-  // console.log("DATA LENGTH =====> ", data.length);
+  // // console.log("DATA LENGTH =====> ", data.length);
   return {
     props: {
       courses: data,

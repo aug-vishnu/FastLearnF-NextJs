@@ -16,8 +16,8 @@ const AuthorRoute = ({ children }) => {
   const fetchAuthor = async () => {
     try {
       let { data } = await axios.get("/api/current-author");
-      // console.log("current-author", data);
-      //   console.log("data", data);
+      // // console.log("current-author", data);
+      //   // console.log("data", data);
       if (data.ok) setOk(true);
     } catch (err) {
       // alert("no user");

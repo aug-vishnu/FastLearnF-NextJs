@@ -72,7 +72,7 @@ const SingleCourse = ({ course }) => {
 
   const checkEnrollment = async () => {
     const { data } = await axios.get(`/api/check-enrollment/${course._id}`);
-    // console.log("CHECK ENROLLMENT => ", data);
+    // // console.log("CHECK ENROLLMENT => ", data);
     setEnrolled(data);
   };
 
@@ -85,9 +85,9 @@ const SingleCourse = ({ course }) => {
       // if user is already enrolled, redirect to course page
       if (enrolled.status)
         return router.push(`/user/course/${enrolled.course.slug}`);
-      // console.log("enroll to this course > ", course._id);
+      // // console.log("enroll to this course > ", course._id);
       const { data } = await axios.post(`/api/paid-enrollment/${course._id}`);
-      // console.log("PAID ENROLLMENT => ", data);
+      // // console.log("PAID ENROLLMENT => ", data);
       // load stripe for payment
       // on successful payment, user will get redirected to /stripe/success page
 
@@ -95,7 +95,7 @@ const SingleCourse = ({ course }) => {
       //   stripe.redirectToCheckout({ sessionId: data });
     } catch (err) {
       toast("Enrollment failed, Try again.");
-      // console.log(err);
+      // // console.log(err);
       setLoading(false);
     }
   };
@@ -109,15 +109,15 @@ const SingleCourse = ({ course }) => {
       // if user is already enrolled, redirect to course page
       if (enrolled.status)
         return router.push(`/user/course/${enrolled.course.slug}`);
-      // console.log("enroll to this course > ", course._id);
+      // // console.log("enroll to this course > ", course._id);
       const { data } = await axios.post(`/api/free-enrollment/${course._id}`);
-      console.log("FREE ENROLLMENT => ", data);
+      // console.log("FREE ENROLLMENT => ", data);
       toast(data.message);
       // redirect user to course page
       router.push(`/user/course/${data.course.slug}`);
     } catch (err) {
       toast("Enrollment failed, Try again.");
-      console.log(err);
+      // console.log(err);
       setLoading(false);
     }
   };

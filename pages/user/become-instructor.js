@@ -18,16 +18,16 @@ const BecomeInstructor = () => {
   } = useContext(Context);
 
   const becomeInstructor = () => {
-    // console.log("become instructor");
+    // // console.log("become instructor");
     setLoading(true);
     axios
       .post("/api/make-instructor")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         window.location.href = res.data;
       })
       .catch((err) => {
-        console.log(err.response.status);
+        // console.log(err.response.status);
         toast("Stripe onboarding failed. Try again.");
         setLoading(false);
       });

@@ -40,12 +40,12 @@ const CourseCreate = () => {
         let { data } = await axios.post("/api/course/upload-image", {
           image: uri,
         });
-        console.log("IMAGE UPLOADED", data);
+        // console.log("IMAGE UPLOADED", data);
         // set image in the state
         setImage(data);
         setValues({ ...values, loading: false });
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         setValues({ ...values, loading: false });
         toast("Image upload failed. Try later.");
       }
@@ -54,7 +54,7 @@ const CourseCreate = () => {
 
   const handleImageRemove = async () => {
     try {
-      // console.log(values);
+      // // console.log(values);
       setValues({ ...values, loading: true });
       const res = await axios.post("/api/course/remove-image", { image });
       setImage({});
@@ -62,7 +62,7 @@ const CourseCreate = () => {
       setUploadButtonText("Upload Image");
       setValues({ ...values, loading: false });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setValues({ ...values, loading: false });
       toast("Image upload failed. Try later.");
     }
@@ -71,7 +71,7 @@ const CourseCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log(values);
+      // // console.log(values);
       const { data } = await axios.post("/api/course", {
         ...values,
         image,

@@ -50,7 +50,7 @@ const CourseEdit = () => {
 
   // fetch course
   useEffect(() => {
-    // console.log(slug);
+    // // console.log(slug);
     if (slug) fetchCourse();
   }, [slug]);
 
@@ -60,7 +60,7 @@ const CourseEdit = () => {
 
   const fetchCourse = async () => {
     let { data } = await axios.get(`/api/course/${slug}`);
-    console.log(data);
+    // console.log(data);
     setValues(data);
     // push array of categories to be used by ant select component
     if (data) {
@@ -72,31 +72,31 @@ const CourseEdit = () => {
 
   const loadCategories = async () => {
     const { data } = await axios.get("/api/categories");
-    // console.log(data);
+    // // console.log(data);
     setCategoryList(data);
   };
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    // console.log(e.target.name, " ----- ", e.target.value);
+    // // console.log(e.target.name, " ----- ", e.target.value);
   };
 
   const handleSubmit = async (e) => {
-    // console.log("HANDLE SUBMIT => ", values);
+    // // console.log("HANDLE SUBMIT => ", values);
     setValues({ ...values, description: content });
-    console.log(content);
-    console.log(values);
+    // console.log(content);
+    // console.log(values);
     try {
       const { data } = await axios.put(`/api/course/${values._id}`, {
         ...values,
         categories: selectedCategories,
         description: content,
       });
-      // console.log(data);
+      // // console.log(data);
       toast("Course Updated!");
       router.push(`/instructor/course/view/${slug}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast(err.response.data);
     }
   };
@@ -104,17 +104,17 @@ const CourseEdit = () => {
   const handleImage = async (e) => {
     // remove previous image
     if (values.image && values.image.Location) {
-      // console.log("YES VALUES IMAGE", values.image);
+      // // console.log("YES VALUES IMAGE", values.image);
       let { data } = await axios.post(
         `/api/course/remove-image/${values._id}`,
         {
           image: values.image,
         }
       );
-      // console.log("removed previous image", data);
+      // // console.log("removed previous image", data);
     }
 
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     let file = e.target.files[0];
     setPreview(window.URL.createObjectURL(file));
     setUploadButtonText(file.name);
@@ -133,14 +133,14 @@ const CourseEdit = () => {
           let { data } = await axios.post("/api/course/upload-image", {
             image: uri,
           });
-          // console.log("image uploaded", data);
+          // // console.log("image uploaded", data);
           setValues({ ...values, image: data, loading: false });
           setUploadButtonText("Upload image");
         } catch (err) {
           setValues({ ...values, loading: false });
           setUploadButtonText("Upload image");
           toast("Image upload failed. Try again.");
-          console.log(err);
+          // console.log(err);
         }
       },
       "base64" // outputType
@@ -150,12 +150,12 @@ const CourseEdit = () => {
   // drag events
   // set key > 'itemIndex' in 'e' object
   const handleDrag = (e, index) => {
-    console.log("ON DRAG", index);
+    // console.log("ON DRAG", index);
     e.dataTransfer.setData("itemIndex", index);
   };
 
   const handleDrop = async (e, index) => {
-    console.log("ON DROP", index);
+    // console.log("ON DROP", index);
 
     const movingItemIndex = e.dataTransfer.getData("itemIndex");
     const targetItemIndex = index; // targeted item on drop
@@ -167,12 +167,12 @@ const CourseEdit = () => {
 
     setValues({ ...values, lessons: allLessons });
     // make request to backend to save the re-ordered lessons
-    // console.log("SEND TO BACKEND", values.lessons);
+    // // console.log("SEND TO BACKEND", values.lessons);
     const { data } = await axios.put(`/api/course/${values._id}`, {
       ...values,
       categories: selectedCategories,
     });
-    console.log(data);
+    // console.log(data);
     toast("Saved!");
   };
 
@@ -187,16 +187,16 @@ const CourseEdit = () => {
         `/api/course/remove-video/${values._id}`,
         removed[0].video
       );
-      console.log(res);
+      // console.log(res);
     }
 
     setValues({ ...values, lessons: allLessons });
-    // console.log("removed", removed, "slug", slug);`
+    // // console.log("removed", removed, "slug", slug);`
     const { data } = await axios.post(
       `/api/course/${values._id}/${removed[0]._id}`
     );
     if (data.ok) toast("Deleted");
-    console.log("delete lesson => ", data);
+    // console.log("delete lesson => ", data);
   };
 
   const handleVideo = async (e) => {
@@ -206,11 +206,11 @@ const CourseEdit = () => {
         `/api/course/remove-video/${values._id}`,
         current.video
       );
-      console.log("REMOVED ===> ", res);
+      // console.log("REMOVED ===> ", res);
     }
     // upload
     const file = e.target.files[0];
-    console.log(file);
+    // console.log(file);
     setUploadButtonText(file.name);
     setUploading(true);
     // send video as form data
@@ -227,21 +227,21 @@ const CourseEdit = () => {
       }
     );
     // once response is received
-    console.log(data);
+    // console.log(data);
     setCurrent({ ...current, video: data });
     setUploading(false);
   };
 
   const handleUpdateLesson = async (e) => {
     e.preventDefault();
-    // console.log("CURRENT", current);
-    // console.log("**SEND TO BACKEND**");
+    // // console.log("CURRENT", current);
+    // // console.log("**SEND TO BACKEND**");
     // console.table({ values });
     let { data } = await axios.post(
       `/api/course/lesson/${values._id}/${current._id}`,
       current
     );
-    // console.log("LESSON UPDATED AND SAVED ===> ", data);
+    // // console.log("LESSON UPDATED AND SAVED ===> ", data);
     setUploadButtonText("Upload video");
     setProgress(0);
     setVisible(false);

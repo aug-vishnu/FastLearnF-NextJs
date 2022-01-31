@@ -81,7 +81,7 @@ const SingleCourse = () => {
 
   const loadCourse = async () => {
     const { data } = await axios.get(`/api/user/course/${slug}`);
-    console.log("USER COURSE => ", data);
+    // console.log("USER COURSE => ", data);
     setCourse(data);
   };
 
@@ -90,42 +90,42 @@ const SingleCourse = () => {
     const { data } = await axios.post(`/api/list-completed`, {
       courseId: course._id,
     });
-    console.log("COMPLETED LESSONS => ", data);
+    // console.log("COMPLETED LESSONS => ", data);
     setCompletedLessons(data);
   };
 
   // unless it's very last video
   // each time video ends, send lesson id to backend and store as completed
   const markCompleted = async () => {
-    // console.log(course.lessons[clicked]._id, course._id);
+    // // console.log(course.lessons[clicked]._id, course._id);
     const { data } = await axios.post(`/api/mark-completed`, {
       courseId: course._id,
       lessonId: course.lessons[clicked]._id,
     });
-    // console.log(data);
+    // // console.log(data);
     setCompletedLessons([...completedLessons, course.lessons[clicked]._id]);
   };
 
   const markIncomplete = async () => {
     try {
-      // console.log(course.lessons[clicked]._id, course._id);
+      // // console.log(course.lessons[clicked]._id, course._id);
       const { data } = await axios.post(`/api/mark-incomplete`, {
         courseId: course._id,
         lessonId: course.lessons[clicked]._id,
       });
-      // console.log(data);
+      // // console.log(data);
       // remove the 'mark incomplete' id from completedLessons
       const all = completedLessons;
-      //   console.log("ALL ======> ", all);
+      //   // console.log("ALL ======> ", all);
       const index = all.indexOf(course.lessons[clicked]._id);
       if (index !== -1) {
         all.splice(index, 1);
-        console.log("ALL WITHOUT REMOVED =====> ", all);
+        // console.log("ALL WITHOUT REMOVED =====> ", all);
         setCompletedLessons(all);
         setUpdateState(!updateState);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -139,7 +139,7 @@ const SingleCourse = () => {
     e.preventDefault();
     try {
       setValues({ ...values, loading: true });
-      // console.log("handle create post => ", values);
+      // // console.log("handle create post => ", values);
       let allData = {
         ...values,
         courseId: course._id,
@@ -147,13 +147,13 @@ const SingleCourse = () => {
         userId: user._id,
       };
       const { data } = await axios.post("/api/qa", allData);
-      // console.log("QA CREATE => ", data);
+      // // console.log("QA CREATE => ", data);
       setValues({ ...values, title: "", description: "", loading: false });
       // setClickedLessonQa([data, ...clickedLessonQa]);
       loadQuestions();
       setVisible(false);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setValues({ ...values, loading: false });
       toast(err.response.data);
     }
@@ -165,17 +165,17 @@ const SingleCourse = () => {
 
   const loadQuestions = async (req, res) => {
     const { data } = await axios.get(`/api/qa/${course.lessons[clicked]._id}`);
-    // console.log(data);
+    // // console.log(data);
     setClickedLessonQa(data);
   };
 
   const handleQaDelete = async (q) => {
     try {
       let answer = confirm("Are you sure you want to delete?");
-      // if (answer) console.log("handle qa delete", qaId);
+      // if (answer) // console.log("handle qa delete", qaId);
       if (!answer) return;
       const { data } = await axios.delete(`/api/qa/${q._id}/${q.postedBy._id}`);
-      // console.log("DELETED QA => ", data);
+      // // console.log("DELETED QA => ", data);
       loadQuestions();
     } catch (err) {
       toast("Delete failed. Try again.");
@@ -183,22 +183,22 @@ const SingleCourse = () => {
   };
 
   const handleQaEdit = (q) => {
-    // console.log("EDIT CLICKED =>", q);
+    // // console.log("EDIT CLICKED =>", q);
     setEditValues(q);
     setEditModalVisible(!editModalVisible);
   };
 
   const handleEditPost = async () => {
-    console.log("editvalues => ", editValues);
+    // console.log("editvalues => ", editValues);
     try {
-      // console.log("EDIT POST REQ => ", editValues);
+      // // console.log("EDIT POST REQ => ", editValues);
       const { data } = await axios.put(`/api/qa/${editValues._id}`, editValues);
-      // console.log("EDIT POST RES => ", data);
+      // // console.log("EDIT POST RES => ", data);
       loadQuestions();
       setEditModalVisible(false);
       toast("Edit successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast("Edit failed. Try again.");
     }
   };
@@ -225,16 +225,16 @@ const SingleCourse = () => {
       loadQuestions();
       setAnswerLoading(false);
       toast("New answer added");
-      // console.log("ANSEWR ADDED =>", data);
+      // // console.log("ANSEWR ADDED =>", data);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setAnswerLoading(false);
       toast("Unauthorized");
     }
   };
 
   const handleEditAnswer = async (a) => {
-    // console.log("handle edit ans qa", q._id, a._id);
+    // // console.log("handle edit ans qa", q._id, a._id);
     setAnswerEditModalVisible(true);
     setCurrentAnswer(a);
   };
@@ -242,9 +242,9 @@ const SingleCourse = () => {
   const handleEditAnswerPost = async () => {
     try {
       setAnswerEditLoading(true);
-      // console.log("handleEditAnswerPost => currentanswer", currentAnswer);
+      // // console.log("handleEditAnswerPost => currentanswer", currentAnswer);
       const { data } = await axios.put(`/api/qa/answer-edit`, currentAnswer);
-      // console.log("ANSWER EDIT RES", data);
+      // // console.log("ANSWER EDIT RES", data);
       loadQuestions();
       setAnswerEditModalVisible(false);
       setCurrentAnswer({});
@@ -259,9 +259,9 @@ const SingleCourse = () => {
   const handleDeleteAnswer = async (a) => {
     try {
       let answer = confirm("Are you sure you want to delete?");
-      // if (answer) console.log("handle qa delete", qaId);
+      // if (answer) // console.log("handle qa delete", qaId);
       if (!answer) return;
-      // console.log("handle delete ans qa", a._id);
+      // // console.log("handle delete ans qa", a._id);
       const { data } = await axios.delete(
         `/api/qa/answer-delete/${a._id}/${a.postedBy._id}`
       );
@@ -274,32 +274,32 @@ const SingleCourse = () => {
 
   const markQaAsResolved = async (q) => {
     try {
-      // console.log("mark as resolved", q._id, q.postedBy._id);
+      // // console.log("mark as resolved", q._id, q.postedBy._id);
       const { data } = await axios.put(`/api/qa/mark-resolved`, {
         questionId: q._id,
         postedBy: q.postedBy._id,
       });
       loadQuestions();
-      console.log("MARK RESOLVED => ", data);
+      // console.log("MARK RESOLVED => ", data);
       toast("You marked it resolved");
     } catch (err) {
-      // console.log(err);
+      // // console.log(err);
       toast("Mark resolved failed. Try again.");
     }
   };
 
   const markQaAsNotResolved = async (q) => {
     try {
-      // console.log("mark as resolved", q._id, q.postedBy._id);
+      // // console.log("mark as resolved", q._id, q.postedBy._id);
       const { data } = await axios.put(`/api/qa/mark-unresolved`, {
         questionId: q._id,
         postedBy: q.postedBy._id,
       });
       loadQuestions();
-      console.log("MARK RESOLVED => ", data);
+      // console.log("MARK RESOLVED => ", data);
       toast("You marked it resolved");
     } catch (err) {
-      // console.log(err);
+      // // console.log(err);
       toast("Mark resolved failed. Try again.");
     }
   };
@@ -309,7 +309,7 @@ const SingleCourse = () => {
    */
   const onlyWidth = useWindowWidth();
   useEffect(() => {
-    console.log("onlyWidth", onlyWidth);
+    // console.log("onlyWidth", onlyWidth);
     if (onlyWidth < 800) {
       setCollapsed(true);
     } else if (onlyWidth > 800) {

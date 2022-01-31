@@ -42,7 +42,7 @@ const ForgotPassword = () => {
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
-    // console.log(email, code, newPassword);
+    // // console.log(email, code, newPassword);
     // return;
     try {
       setLoading(true);

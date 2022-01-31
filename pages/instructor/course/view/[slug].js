@@ -37,7 +37,7 @@ const CourseView = () => {
   const { slug } = router.query;
 
   useEffect(() => {
-    // console.log(slug);
+    // // console.log(slug);
     if (slug) fetchCourse();
   }, [slug]);
 
@@ -47,7 +47,7 @@ const CourseView = () => {
 
   const fetchCourse = async () => {
     let { data } = await axios.get(`/api/course/${slug}`);
-    console.log(data);
+    // console.log(data);
     setCourse(data);
   };
 
@@ -55,7 +55,7 @@ const CourseView = () => {
     const { data } = await axios.post(`/api/instructor/student-count`, {
       courseId: course._id,
     });
-    // console.log("STUDENT COUNT => ", data.length);
+    // // console.log("STUDENT COUNT => ", data.length);
     setStudents(data.length);
   };
 

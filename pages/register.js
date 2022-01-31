@@ -38,7 +38,7 @@ const Register = () => {
         email,
         password,
       });
-      // console.log("REGISTER RESPONSE", data);
+      // // console.log("REGISTER RESPONSE", data);
       loginUser();
       toast("Registration successful. Please login.");
       setName("");
@@ -61,7 +61,7 @@ const Register = () => {
         password,
       });
       loginUser();
-      console.log("REGISTER RESPONSE", data);
+      // console.log("REGISTER RESPONSE", data);
       toast("Registration successful. Please login.");
       setName("");
       setEmail("");

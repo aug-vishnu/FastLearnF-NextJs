@@ -19,7 +19,7 @@ const UserIndex = () => {
     const { data } = await axios.get(`/api/user-courses`, {
       withCredentials: true,
     });
-    console.log(data);
+    // console.log(data);
     setCourses(data);
   };
 

@@ -31,7 +31,7 @@ const StudentIndex = ({ courses, router }) => {
 
 export async function getServerSideProps() {
   const { data } = await axios.get(`/api/courses`);
-  // console.log("DATA LENGTH =====> ", data.length);
+  // // console.log("DATA LENGTH =====> ", data.length);
   return {
     props: {
       courses: data,

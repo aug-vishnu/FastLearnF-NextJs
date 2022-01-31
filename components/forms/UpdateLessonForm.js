@@ -15,7 +15,7 @@ const UpdateLessonForm = ({
   markdownCheetsheetModal,
   setMarkdownCheetsheetModal = (f) => f,
 }) => {
-  console.log(current);
+  // console.log(current);
   const editorRef = useRef();
   const [editorLoaded, setEditorLoaded] = useState(false);
   const { CKEditor, ClassicEditor } = editorRef.current || {};

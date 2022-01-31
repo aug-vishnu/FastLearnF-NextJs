@@ -15,7 +15,7 @@ const InstructorIndex = () => {
 
   const loadCourses = async () => {
     const { data } = await axios.get("/api/instructor-courses");
-    // console.log(data);
+    // // console.log(data);
     setCourses(data);
   };
 

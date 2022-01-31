@@ -43,10 +43,10 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   };
   const handleAddLesson = async (e) => {
     e.preventDefault();
-    // console.log("**SEND TO BACKEND**", course);
+    // // console.log("**SEND TO BACKEND**", course);
     console.table({ values });
     let { data } = await axios.post(`/api/course/lesson/${course._id}`, values);
-    console.log("LESSON ADDED AND SAVED ===> ", data);
+    // console.log("LESSON ADDED AND SAVED ===> ", data);
     // setValues({ ...values, title: "", content: "", video: {} });
     setUploadButtonText("Upload video");
     setIsModalVisible(false);
@@ -58,7 +58,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   const handleVideo = async (e) => {
     try {
       const file = e.target.files[0];
-      console.log(file);
+      // console.log(file);
       setUploadButtonText(file.name);
       setUploading(true);
       // send video as form data
@@ -75,12 +75,12 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
         }
       );
       // once response is received
-      console.log(data);
+      // console.log(data);
       setValues({ ...values, video: data });
       setUploading(false);
       setProgress(0);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast("Video upload failed");
     }
   };
@@ -91,7 +91,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
       `/api/course/remove-video/${course._id}`,
       values.video
     );
-    console.log("remove uploaded video", data);
+    // console.log("remove uploaded video", data);
     setValues({ ...values, video: {} });
     setProgress(0);
     setUploading(false);
@@ -99,7 +99,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   };
 
   const handlePublish = async () => {
-    // console.log(course.instructor._id);
+    // // console.log(course.instructor._id);
     // return;
     try {
       let answer = window.confirm(
@@ -107,7 +107,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
       );
       if (!answer) return;
       const { data } = await axios.put(`/api/course/publish/${course._id}`);
-      // console.log("COURSE PUBLISHED RES", data);
+      // // console.log("COURSE PUBLISHED RES", data);
       toast("Congrats. Your course is now live in marketplace!");
       setCourse(data);
     } catch (err) {
@@ -116,7 +116,7 @@ function CourseDetailAtnBtn({ course, students, setCourse }) {
   };
 
   const handleUnpublish = async () => {
-    // console.log(slug);
+    // // console.log(slug);
     // return;
     try {
       let answer = window.confirm(

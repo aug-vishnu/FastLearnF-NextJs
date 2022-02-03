@@ -36,14 +36,14 @@ function StudentDashboard({ courses }) {
               ))}
           </Row>
           <Row className="my-5 topperCta" justify="center">
-            <Col span={12}>
+            <Col md={24} lg={12}>
               <Image
                 className="p-2 pointer"
                 preview={false}
                 src="https://media.discordapp.net/attachments/913336114713100328/938845013381611582/unknown.png"
               />
             </Col>
-            <Col span={12}>
+            <Col md={24} lg={12}>
               <Image
                 className="p-2 pointer"
                 preview={false}

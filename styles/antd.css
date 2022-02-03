@@ -76,3 +76,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media only screen and (max-width: 1000px) {
+  .courseName {
+    width: 85%;
+  }
+}

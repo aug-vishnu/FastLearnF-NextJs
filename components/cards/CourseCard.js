@@ -1,4 +1,4 @@
-import { Card, Badge } from "antd";
+import { Card, Badge, Tooltip } from "antd";
 import Link from "next/link";
 import { currencyFormatter } from "../../utils/helpers";
 import styles from "../../styles/Common.module.css";
@@ -17,27 +17,31 @@ const CourseCard = ({ course, slug }) => {
         <Col>
           <Row className={styles.CourseCard} justify="space-between">
             <Space direction="vertical">
-              <div className="media-body pl-2">
-                <div className="row">
-                  {/* <Avatar
+              <Tooltip title={course.name}>
+                <div className="media-body pl-2">
+                  <div className="row">
+                    {/* <Avatar
                 size={80}
                 src={course.image ? course.image.Location : "/course.png"}
               /> */}
-                  <div className="col">
-                    <Badge count={course.paid ? course.price : "Free"}>
-                      <a href={slug} className="pointer">
-                        <a>
-                          <h5 className="my-2 text-primary">{course.name}</h5>
+                    <div className="col">
+                      <Badge count={course.paid ? course.price : "Free"}>
+                        <a href={slug} className="pointer">
+                          <a>
+                            <h5 className="my-2 text-primary">{course.name}</h5>
+                          </a>
                         </a>
-                      </a>
-                    </Badge>
-                    <p style={{ marginTop: "-10px", width: "200px" }}>
-                      {course.lessons.length} Lessons -{" "}
-                      <span className="text-muted" style={{ fontSize: "12px" }}>
-                        By {course.instructor.name}
-                      </span>
-                    </p>
-                    {/* {course.lessons.length < 5 ? (
+                      </Badge>
+                      <p style={{ marginTop: "-10px", width: "200px" }}>
+                        {course.lessons.length} Lessons -{" "}
+                        <span
+                          className="text-muted"
+                          style={{ fontSize: "12px" }}
+                        >
+                          By {course.instructor.name}
+                        </span>
+                      </p>
+                      {/* {course.lessons.length < 5 ? (
                       <p
                         style={{ marginTop: "-15px", fontSize: "10px" }}
                         className="text-danger"
@@ -59,9 +63,10 @@ const CourseCard = ({ course, slug }) => {
                         Your course is ready to be published
                       </p>
                     )} */}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Tooltip>
             </Space>
             <Space>
               <div className="float-right pr-4 text-center">

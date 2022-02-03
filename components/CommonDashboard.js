@@ -47,14 +47,14 @@ function CommonDashboard({ courses, isPublic }) {
           ))}
       </Row>
       <Row className="my-5 topperCta" justify="center">
-        <Col span={12}>
+        <Col md={24} lg={12}>
           <Image
             className="p-2 pointer"
             preview={false}
             src="https://media.discordapp.net/attachments/913336114713100328/938845013381611582/unknown.png"
           />
         </Col>
-        <Col span={12}>
+        <Col md={24} lg={12}>
           <Image
             className="p-2 pointer"
             preview={false}
@@ -73,20 +73,20 @@ function CommonDashboard({ courses, isPublic }) {
           <CourseCard course={course} slug={`/course/${course.slug}`} />
         ))}
       <Row className="my-5 topperCta" justify="center" align="middle">
-        <Col span={12}>
+        <Col span={24}>
           <Image
             className="p-2 pointer"
             preview={false}
-            src="https://media.discordapp.net/attachments/913336114713100328/938838817266368552/unknown.png?width=483&height=298"
+            src="https://media.discordapp.net/attachments/913336114713100328/938838817266368552/unknown.png"
           />
         </Col>
-        <Col span={12}>
+        {/* <Col span={10}>
           <Image
             className="p-2 pointer"
             preview={false}
-            src="https://media.discordapp.net/attachments/913336114713100328/938838817044045874/unknown.png?width=444&height=229"
+            src="https://media.discordapp.net/attachments/913336114713100328/938838817044045874/unknown.png"
           />
-        </Col>
+        </Col> */}
       </Row>
       <Footer>
         <Image

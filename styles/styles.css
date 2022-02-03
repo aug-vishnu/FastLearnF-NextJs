@@ -14,13 +14,13 @@ h5 {
 .square {
   border-radius: 0px;
 }
-
+/* 
 .container {
   width: 100vw;
   max-width: 1250px !important;
   margin-top: 2rem;
   padding: 0 3rem;
-}
+} */
 
 .pointer {
   cursor: pointer;
@@ -86,7 +86,16 @@ input[type="text"] {
 
 .studentCta {
   box-shadow: 4px 4px 13px -0px #00000027;
-  height: 15vh;
+  /* height: 15vh; */
+}
+.topperCta {
+  box-shadow: 4px 4px 13px -0px #00000027;
+  background-color: #f7fafc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.topperCta .ant-image-img {
+  mix-blend-mode: darken !important;
 }
 .studentsLogo {
   margin-top: -7.5vh;
@@ -155,9 +164,14 @@ section {
 .heroSection h3 {
   width: 60%;
 }
-
+.titleGrad,
+h2 {
+  background: -webkit-linear-gradient(180deg, #28f0ff -38.67%, #029dff 96.61%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .footer {
-  margin-top: 50vh !important;
+  margin-top: 10vh !important;
 }
 
 @media only screen and (max-width: 800px) {

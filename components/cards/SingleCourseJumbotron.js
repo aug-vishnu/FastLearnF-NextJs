@@ -39,7 +39,7 @@ const SingleCourseJumbotron = ({
   } = useContext(Context);
 
   return (
-    <div className="wrapper shadow container ">
+    <div className="wrapper shadow container my-5">
       <div className="row p-3">
         <div className="col-md-8">
           {/* title */}

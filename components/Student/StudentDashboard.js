@@ -4,6 +4,7 @@ import StudentCta from "./StudentCta";
 import CourseCard from "../cards/CourseCard";
 import Footer from "../Footer";
 import { Empty } from "antd";
+import ListCard from "../ListCard";
 
 function StudentDashboard({ courses }) {
   return (
@@ -24,6 +25,32 @@ function StudentDashboard({ courses }) {
               description="You haven't enrolled course Yet"
             />
           )}
+          <Row justify="center">
+            {courses &&
+              courses.map((course) => (
+                <ListCard
+                  isPublic="true"
+                  course={course}
+                  slug={`/course/${course.slug}`}
+                />
+              ))}
+          </Row>
+          <Row className="my-5 topperCta" justify="center">
+            <Col span={12}>
+              <Image
+                className="p-2 pointer"
+                preview={false}
+                src="https://media.discordapp.net/attachments/913336114713100328/938845013381611582/unknown.png"
+              />
+            </Col>
+            <Col span={12}>
+              <Image
+                className="p-2 pointer"
+                preview={false}
+                src="https://media.discordapp.net/attachments/913336114713100328/938845013666844722/unknown.png"
+              />
+            </Col>
+          </Row>
           <div className="row pt-2">
             {courses.map((course) => (
               <div key={course._id} className="col-md-12">

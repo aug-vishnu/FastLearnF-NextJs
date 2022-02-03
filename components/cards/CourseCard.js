@@ -79,7 +79,7 @@ const CourseCard = ({ course, slug }) => {
                   </div>
                 )}
               </div>
-              <a href={slug}>
+              <a href={slug} className="titleGrad">
                 <Row justify="end" className="pointer">
                   <DoubleRightOutlined className={styles.btnNext} />
                 </Row>

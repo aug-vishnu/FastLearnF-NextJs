@@ -14,22 +14,23 @@ function StudentCta() {
           </Button>{" "}
         </Space>
       </Row>
-      <Row className="my-5 studentCta wrapper" justify="space-between">
-        <Col span={10}>
+      <Row className="my-5 topperCta" justify="center">
+        <Col span={24}>
           <Image
-            className="studentsLogo ml-3 p-2 pointer"
+            className="p-2 pointer"
             preview={false}
-            width={500}
-            src="https://cdn.discordapp.com/attachments/873247967623147580/909530906702790686/unknown.png"
+            src="https://media.discordapp.net/attachments/913336114713100328/938838816784011274/unknown.png"
           />
         </Col>
-        <Col span={14}>
+        {/* <Col span={16} className="px-5 pb-2">
           {" "}
-          <h2 className="my-2 mt-4">Welcome to India’s best courses </h2>
-          <p className="my-2 text-primary">
+          <h2 className="my-2 mt-4">
+            Explore courses just built for your exams{" "}
+          </h2>
+          <p className="my-2 text-primary pb-2">
             On-demand Courses built for you by your favorite Tutors{" "}
           </p>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );

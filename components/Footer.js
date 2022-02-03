@@ -1,11 +1,21 @@
+import { Col, Image, Row } from "antd";
 import React from "react";
 
 function Footer({ children }) {
   return (
     <div>
+      <Row className="my-5 topperCta" justify="center">
+        <Col span={24}>
+          <Image
+            className="p-2 pointer"
+            preview={false}
+            src="https://media.discordapp.net/attachments/913336114713100328/938845239735623810/unknown.png"
+          />
+        </Col>
+      </Row>
       <section className="mt-5 pt-5 footer">
         {children}
-        <div class="container">
+        <div class="">
           <p class="text-muted mb-5">
             Unlimited access to 7,000+ world-class courses, hands-on projects,
             and job-ready certificate programs, for one all-inclusive

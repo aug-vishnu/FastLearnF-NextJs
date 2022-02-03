@@ -21,7 +21,9 @@ function TutorDashboard({ courses }) {
           {" "}
           <Row justify="space-between" className="py-4">
             {courses.length != 0 && (
-              <h3 className="mb-4">Courses ( {courses.length} )</h3>
+              <h3 className="mb-4">
+                Your Published Courses ( {courses.length} )
+              </h3>
             )}
             <TutorAtnBtn></TutorAtnBtn>
           </Row>

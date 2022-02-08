@@ -72,5 +72,5 @@ We tried to use a completely modern tech stack while testing out some new techno
 
 # License
 
-[MIT](https://opensource.org/licenses/MIT)
+Licensed under the [MIT](https://opensource.org/licenses/MIT) License, Copyright © 2022
 
